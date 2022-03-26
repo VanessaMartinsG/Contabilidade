@@ -1,0 +1,62 @@
+@function convertPXfromRem($px) {
+    $result:1;
+    $result: $px / 16px;
+    @return $result;
+}
+
+header{
+    color:rgba(255, 255, 255, 1);
+    background-color: rgba(17, 3, 56, 1);
+    height: convertPXfromRem(212px) * 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .brand{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: convertPXfromRem(385px) * 1rem;
+        margin-right: convertPXfromRem(120px) * 1rem;
+        
+        &__icon{
+            width: convertPXfromRem(100px) * 1rem;
+            height: convertPXfromRem(100px) * 1rem;
+        }
+        &__title{
+            font-size: convertPXfromRem(32px) * 1rem;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+        }
+    }
+
+    .signIn{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: convertPXfromRem(196px) * 1rem;
+
+        &__login{
+            color: rgba(255, 255, 255, 1);
+            text-decoration: none;
+
+            &:hover{
+                text-decoration: underline;
+                text-decoration-color: rgba(29, 168, 118, 1);
+                font-size: convertPXfromRem(18px) * 1rem;
+            }
+        }
+        &__register{
+            color: rgba(255, 255, 255, 1);
+            text-decoration: none;
+
+            &:hover{
+                text-decoration: underline;
+                text-decoration-color: rgba(29, 168, 118, 1);
+                font-size: convertPXfromRem(18px) * 1rem;
+            }
+        }
+    }
+    
+}
