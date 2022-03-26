@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Lázaro Queiroz da Silva",
+      "email": "lazaroq11@gmail.com",
+      "cpf": "06274521593",
+      "Saldo": "1770"
+    },
+    {
+      "nome": "Teste",
+      "email": "",
+      "cpf": "",
+      "saldo": "",
+      "id": 2
+    },
+    {
+      "nome": "Lázaro",
+      "email": "lazaroq11@gmail.com",
+      "cpf": "06274521522",
+      "saldo": "1230",
+      "id": 3
+    }
+  ]
+}

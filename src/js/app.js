@@ -1,1 +1,2 @@
-import "./maskCpf.js";
+// import "./maskCpf.js";
+import "./register.js";
