@@ -5,8 +5,8 @@
 }
 
 header{
-    color:rgba(255, 255, 255, 1);
-    background-color: rgba(17, 3, 56, 1);
+    color:#FFFFFF;
+    background-color: #110338;;
     height: convertPXfromRem(212px) * 1rem;
     width: 100%;
     display: flex;
@@ -38,22 +38,22 @@ header{
         width: convertPXfromRem(196px) * 1rem;
 
         &__login{
-            color: rgba(255, 255, 255, 1);
+            color: #FFFFFF;
             text-decoration: none;
 
             &:hover{
                 text-decoration: underline;
-                text-decoration-color: rgba(29, 168, 118, 1);
+                text-decoration-color: #1DA876;
                 font-size: convertPXfromRem(18px) * 1rem;
             }
         }
         &__register{
-            color: rgba(255, 255, 255, 1);
+            color: #FFFFFF;
             text-decoration: none;
 
             &:hover{
                 text-decoration: underline;
-                text-decoration-color: rgba(29, 168, 118, 1);
+                text-decoration-color: #1DA876;
                 font-size: convertPXfromRem(18px) * 1rem;
             }
         }
