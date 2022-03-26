@@ -9,7 +9,6 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    padding-top:convertPXfromRem(101px) * 1rem;
     
    
 .login__box{
@@ -17,6 +16,7 @@
     align-items: center;
     justify-content: space-evenly;
     flex-direction:column;
+    margin-top: convertPXfromRem(101px) * 1rem;
     background-color:#FFFFFF;
     border-radius:5px;
     width: convertPXfromRem(728px) * 1rem;
