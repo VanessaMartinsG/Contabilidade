@@ -11,13 +11,15 @@
 <body>
     <main class="register">
          <div class = "register__box">
-            <h2 class="register__title">Cadastrar Usuário</h2>
-            <form class="register__form" name="register__form">
-                <input type="text" class = "register__form__nome" name="register__form__nome"  placeholder="Nome"/>
-                <input type="text" class = "register__form__email" name="register__form__email"  placeholder="Email"/>
-                <input oninput="maskCpf(this)"type="text" class = "register__form__cpf" name="register__form__cpf"  placeholder="Cpf"/>
-                <input type="text" class = "register__form__saldo" name="register__form__saldo"  placeholder="Saldo"/>
-                <button class="register__form__btCadastrar">Login</button>
+            <h2 class="register__box__title">Cadastrar Usuário</h2>
+            <form class="register__box__form" name="register__box__form">
+                <div class="register__box__form__inputs">
+                <input type="text" class = "register__box__form__input nome"  id="register__box__form__input__nome"  placeholder="Nome"/>
+                <input type="email" class = "register__box__form__input email" id="register__box__form__input__email"  placeholder="Email"/>
+                <input type="text" class = "register__box__form__input cpf" id="register__box__form__input__cpf"  placeholder="Cpf"/>
+                <input type="text" class = "register__box__form__input saldo" id="register__box__form__input__saldo" placeholder="Saldo"/>
+            </div>
+                <button class="register__box__form__btCadastrar ">Cadastrar</button>
             </form>
          </div>
     </main>

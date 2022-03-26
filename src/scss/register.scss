@@ -11,7 +11,7 @@
     justify-content: center;
     padding-top:convertPXfromRem(101px) * 1rem;
 
-    .register__box{
+    &__box{
         display:flex;
         align-items: center;
         justify-content: space-evenly;
@@ -20,11 +20,89 @@
         border-radius:5px;
         width: convertPXfromRem(728px) * 1rem;
         height: convertPXfromRem(377px) * 1rem;
+        padding-top:convertPXfromRem(28px) * 1rem;
+      
 
-    }
 
-    .register__form{
-        display:grid;
+        &__title{
+            font-family: "Poppins", sans-serif;
+            color:#363F5F;
+            font-size:convertPXfromRem(24px) * 1rem;
+            
+         
+        }
+
+        &__form{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom:58px;
+          
+             
+           &__inputs{
+            display:grid;
+            grid-template:
+            "nome email" 
+            "cpf saldo";
+             column-gap: 95px;
+             row-gap:43px;
+           }
+             &__input{
+                 width:convertPXfromRem(288px) * 1rem;
+                 height:convertPXfromRem(53px) * 1rem;
+                 margin-top:convertPXfromRem(28px) * 1rem;
+                 background-color: #E7E9EE;
+                 border: 1px solid #D7D7D7;
+                 border-radius:5px;
+                 width:convertPXfromRem(288px) * 1rem;
+                 height:convertPXfromRem(53px) * 1rem;    
+                 font-family: "Poppins", sans-serif;
+                 font-weight: 400;
+                 font-size:convertPXfromRem(16px) * 1rem;
+                 padding-left:convertPXfromRem(23px) * 1rem; 
+                 padding-top:convertPXfromRem(14px) * 1rem;
+                 padding-bottom:convertPXfromRem(15px) * 1rem;
+              
+
+                 &:focus{
+                    outline:0;
+                    box-shadow: 0 0 0 0;
+                   }
+
+                   &::-webkit-input-placeholder{
+                    font-family: "Poppins", sans-serif;
+                    font-size:convertPXfromRem(16px) * 1rem;
+                }
         
+                &:focus::-webkit-input-placeholder{
+                    color:transparent;
+                }
+             }
+             
+             &__btCadastrar{
+                 width:288px;
+                 height:convertPXfromRem(64px) * 1rem;
+                 background-color:#1DA876;
+                 border: 1px solid #D7D7D7;
+                 border-radius: 5px;
+                 color:#FFFFFF;
+                 font-size:convertPXfromRem(16px) * 1rem;
+                 font-weight: 600;
+                 cursor:pointer;
+                 margin-top:convertPXfromRem(18px) * 1rem;
+                
+            &:hover{
+                background-color: #363F5F;
+                transition: all ease 0.3s;
+            }
+             }
+           
+        }
+
+        
+      
     }
+
+  
 }
