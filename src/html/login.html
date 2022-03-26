@@ -5,16 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel ="stylesheet" href = "../../dist/css/app.min.css"/>
-    <script src ="../dist/js/app.min.js"></script>
+    <script src ="../../dist/js/app.min.js"></script>
+    
+    
+    
     <title>Login</title>
 </head>
 <body>
     <main class="login">
     <div class="login__box">
-        <h1 class="login_box__title">Login Usuário</h1>
-        <form class="login_box__form_login" name="login_box__form_login">
-            <input type="cpf" class = "form_login__cpf" name="form_login__cpf" placeholder="Cpf"/>
-            <button class="form_login__btlogin">Login</button>
+        <h2 class="login__title">Login Usuário</h2>
+        <form class="login__form" name="login__form">
+            <input oninput="maskCpf(this)"type="text" class = "login__form__cpf" name="login__form__cpf"  placeholder="Cpf"/>
+            <button class="login__form__btlogin">Login</button>
         </form>
     </div>
 </main>
