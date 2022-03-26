@@ -1,0 +1,30 @@
+@function convertPXfromRem($px) {
+    $result:1;
+    $result: $px / 16px;
+    @return $result;
+}
+
+
+.register{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding-top:convertPXfromRem(101px) * 1rem;
+
+    .register__box{
+        display:flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction:column;
+        background-color:#FFFFFF;
+        border-radius:5px;
+        width: convertPXfromRem(728px) * 1rem;
+        height: convertPXfromRem(377px) * 1rem;
+
+    }
+
+    .register__form{
+        display:grid;
+        
+    }
+}

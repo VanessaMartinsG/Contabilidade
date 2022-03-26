@@ -1,14 +1,26 @@
-function maskCpf(i){
+(() => {
    
-    var v = i.value;
-    
-    if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
-       i.value = v.substring(0, v.length-1);
-       return;
-    }
-    
-    i.setAttribute("maxlength", "14");
-    if (v.length == 3 || v.length == 7) i.value += ".";
-    if (v.length == 11) i.value += "-";
+   const cpf = document.querySelector("#login__form__cpf");
+   
+   cpf.addEventListener('keypress',()=>{
+      let cpfLength = cpf.value.length;
+      
+      
+      if(isNaN(cpf.value[cpfLength-1])){
+         cpf.value = cpf.value.substring(0, cpfLength-1); 
+         return false;
+      }
+
+
+
+      if(cpfLength === 3 || cpfLength === 7){
+         cpf.value += "." 
+      }else
+      if(cpfLength === 11){
+         cpf.value += "-"
+      }
+     
+   })
+   
+   })();
  
- }
