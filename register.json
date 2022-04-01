@@ -20,6 +20,13 @@
       "cpf": "06274521522",
       "saldo": "1230",
       "id": 3
+    },
+    {
+      "nome": "Marcos Paulo",
+      "email": "marquinhos@gmail.com",
+      "cpf": "0873423779",
+      "saldo": "17",
+      "id": 4
     }
   ]
 }
