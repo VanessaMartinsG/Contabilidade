@@ -1,6 +1,33 @@
+
+
 (() => {
 const baseURL = "http://localhost:3000";
 const form_login = document.forms.register__box__form;
+const cpf = document.getElementById("cpf");
+const saldo = document.getElementById("saldo");
+
+
+
+saldo.addEventListener("input", e => {   
+        var valor = saldo.value;
+
+        valor = valor + '';
+        valor = parseInt(valor.replace(/[\D]+/g, ''));
+        valor = valor + '';
+        valor = valor.replace(/([0-9]{2})$/g, ",$1");
+
+        if (valor.length > 6) {
+            valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+        }
+        
+        if(valor.length > 2){
+            valor = valor.replace(/([0-9]{3}).([0-9]{3}).([0-9]{2}$)/g, ".$1.$2,$3");
+        }
+
+
+        saldo.value = valor;
+        if(valor == 'NaN') saldo.value = '';
+});
 
 form_login.addEventListener("submit",(e)=>{
     e.preventDefault();
@@ -17,6 +44,24 @@ form_login.addEventListener("submit",(e)=>{
     }
 
 })
+
+cpf.addEventListener('keypress',()=>{
+    let cpfLength = cpf.value.length;
+    
+    if(isNaN(cpf.value[cpfLength-1])){
+       cpf.value = cpf.value.substring(0, cpfLength-1); 
+       return false;
+    }
+
+    if(cpfLength === 3 || cpfLength === 7){
+       cpf.value += "." 
+    }else
+    if(cpfLength === 11){
+       cpf.value += "-"
+    }
+   
+ })
+
 
 
 function validaCampo(name,email,cpf,saldo){
