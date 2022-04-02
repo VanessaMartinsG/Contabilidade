@@ -1,101 +1,94 @@
 @function convertPXfromRem($px) {
-    $result:1;
+    $result: 1;
     $result: $px / 16px;
     @return $result;
 }
 
-
-.register{
-    display:flex;
+.register {
+    display: flex;
     align-items: center;
     justify-content: center;
-    height:100%;
+    height: 100%;
 
-    &__box{
-        display:flex;
+    &__box {
+        display: flex;
         align-items: center;
         justify-content: space-evenly;
-        flex-direction:column;
-        background-color:#FFFFFF;
-        border-radius:5px;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        border-radius: 5px;
         width: convertPXfromRem(728px) * 1rem;
         height: convertPXfromRem(377px) * 1rem;
-        
-      
 
-
-        &__title{
+        &__title {
             font-family: "Poppins", sans-serif;
-            color:#363F5F;
-            font-size:convertPXfromRem(24px) * 1rem;
-            padding-bottom:28px;
-        
-            
-         
+            color: #363F5F;
+            font-size: convertPXfromRem(24px) * 1rem;
+            padding-bottom: 28px;
         }
 
-        &__form{
-            display:flex;
+        &__form {
+            display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
 
-            &__inputs{
-                display:grid;
+            &__inputs {
+                display: grid;
                 grid-template:
-                "nome email" 
-                "cpf saldo";
+                    "nome email"
+                    "cpf saldo";
                 column-gap: 95px;
-                row-gap:43px;
+                row-gap: 43px;
             }
 
-            &__input{
-                width:convertPXfromRem(288px) * 1rem;
-                height:convertPXfromRem(53px) * 1rem;
-                padding-top:convertPXfromRem(34px) * 1rem;
+            &__input {
+                width: convertPXfromRem(288px) * 1rem;
+                height: convertPXfromRem(53px) * 1rem;
+                padding-top: convertPXfromRem(34px) * 1rem;
                 background-color: #E7E9EE;
                 border: 1px solid #D7D7D7;
-                border-radius:5px;
-                width:convertPXfromRem(288px) * 1rem;
-                height:convertPXfromRem(53px) * 1rem;    
+                border-radius: 5px;
+                width: convertPXfromRem(288px) * 1rem;
+                height: convertPXfromRem(53px) * 1rem;
                 font-family: "Poppins", sans-serif;
                 font-weight: 400;
-                font-size:convertPXfromRem(16px) * 1rem;
-                padding-left:convertPXfromRem(23px) * 1rem; 
-                padding-top:convertPXfromRem(14px) * 1rem;
-                padding-bottom:convertPXfromRem(15px) * 1rem;
+                font-size: convertPXfromRem(16px) * 1rem;
+                padding-left: convertPXfromRem(23px) * 1rem;
+                padding-top: convertPXfromRem(14px) * 1rem;
+                padding-bottom: convertPXfromRem(15px) * 1rem;
 
-                 &:focus{
-                    outline:0;
+                &:focus {
+                    outline: 0;
                     box-shadow: 0 0 0 0;
                 }
 
-                &::-webkit-input-placeholder{
+                &::-webkit-input-placeholder {
                     font-family: "Poppins", sans-serif;
-                    font-size:convertPXfromRem(16px) * 1rem;
+                    font-size: convertPXfromRem(16px) * 1rem;
                 }
-        
-                &:focus::-webkit-input-placeholder{
-                    color:transparent;
+
+                &:focus::-webkit-input-placeholder {
+                    color: transparent;
                 }
             }
 
-            &__bt{
-                padding-top:34px;
+            &__bt {
+                padding-top: 34px;
 
-                &__btCadastrar{
-                    width:convertPXfromRem(288px) * 1rem;
-                    height:convertPXfromRem(64px) * 1rem;
-                    background-color:#1DA876;
+                &__btCadastrar {
+                    width: convertPXfromRem(288px) * 1rem;
+                    height: convertPXfromRem(64px) * 1rem;
+                    background-color: #1DA876;
                     border: 1px solid #D7D7D7;
                     border-radius: 5px;
-                    color:#FFFFFF; 
-                    font-size:convertPXfromRem(16px) * 1rem;
+                    color: #FFFFFF;
+                    font-size: convertPXfromRem(16px) * 1rem;
                     font-weight: 600;
-                    cursor:pointer;
-                    margin-bottom:28px;
+                    cursor: pointer;
+                    margin-bottom: 28px;
 
-                    &:hover{
+                    &:hover {
                         background-color: #363F5F;
                         transition: all ease 0.3s;
                     }
@@ -106,37 +99,36 @@
 }
 
 @media (max-width: 490px) {
-    .register{
+    .register {
         background-color: #F0F2F5;
 
-        &__box{
+        &__box {
             height: 100%;
             width: 100%;
             background-color: #F0F2F5;
             padding-top: convertPXfromRem(25px) * 1rem;
             justify-content: unset;
 
-            &__form{
-                &__inputs{
-                    display:grid;
+            &__form {
+                &__inputs {
+                    display: grid;
                     grid-template:
-                    "nome"
-                    "email" 
-                    "cpf" 
-                    "saldo";
-                    row-gap:27px;
+                        "nome"
+                        "email"
+                        "cpf"
+                        "saldo";
+                    row-gap: 27px;
                 }
 
-                &__input{
+                &__input {
                     width: convertPXfromRem(313px) * 1rem;
                     height: convertPXfromRem(49px) * 1rem;
                 }
 
-                &__bt{
-                    &__btCadastrar{
-                        width:convertPXfromRem(313px) * 1rem;
+                &__bt {
+                    &__btCadastrar {
+                        width: convertPXfromRem(313px) * 1rem;
                         height: convertPXfromRem(58px) * 1rem;
-                    
                     }
                 }
             }
@@ -145,9 +137,10 @@
 }
 
 @media (min-width: 491px) and (max-width: 1023px) {
-    .register{
+    .register {
         background-color: #F0F2F5;
-        &__box{
+
+        &__box {
             height: 100%;
             width: 100%;
             background-color: #F0F2F5;
@@ -155,5 +148,4 @@
             justify-content: unset;
         }
     }
-
 }
