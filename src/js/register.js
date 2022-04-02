@@ -1,6 +1,6 @@
 (() => {
 const baseURL = "http://localhost:3000";
-
+const form_login = document.forms.register__box__form;
 
 form_login.addEventListener("submit",(e)=>{
     e.preventDefault();
