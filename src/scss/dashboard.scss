@@ -1,0 +1,93 @@
+@function convertPXfromRem($px) {
+    $result: 1;
+    $result: $px / 16px;
+    @return $result;
+}
+
+header {
+    color: #FFFFFF;
+    background-color: #110338;
+    height: convertPXfromRem(212px) * 1rem;
+    width: 100%;
+    padding: 0 convertPXfromRem(160px) * 1rem;
+    padding-top: convertPXfromRem(32px) * 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: convertPXfromRem(14px) * 1rem;
+
+    .brand {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__logo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: convertPXfromRem(14px) * 1rem;
+
+            .brand__icon {
+                width: convertPXfromRem(40px) * 1rem;
+                height: convertPXfromRem(40px) * 1rem;
+            }
+
+            .brand__title {
+                font-size: convertPXfromRem(16px) * 1rem;
+                font-weight: 600;
+            }
+        }
+
+        &__transaction {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: convertPXfromRem(26px) * 1rem;
+
+            .brand__userName {
+                font-weight: 600;
+            }
+
+            .brand__btnTransaction {
+                width: convertPXfromRem(195px) * 1rem;
+                height: convertPXfromRem(48px) * 1rem;
+                background-color: #633ECB;
+                font-size: convertPXfromRem(16px) * 1rem;
+                color: #FFFFFF;
+                font-weight: 600;
+                border: 0;
+                border-radius: convertPXfromRem(5px) * 1rem;
+            }
+        }
+    }
+
+    .signIn {
+        display: flex;
+        justify-content: space-between;
+        align-self: flex-end;
+        width: convertPXfromRem(196px) * 1rem;
+
+        &__login {
+            color: #FFFFFF;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: #1DA876;
+                font-size: convertPXfromRem(18px) * 1rem;
+            }
+        }
+
+        &__register {
+            color: #FFFFFF;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: #1DA876;
+                font-size: convertPXfromRem(18px) * 1rem;
+            }
+        }
+    }
+
+}
