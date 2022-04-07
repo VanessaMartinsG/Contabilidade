@@ -12,11 +12,17 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../../dist/css/app.min.css">
-    <title>Header</title>
+    <script src="../../dist/js/app.min.js" defer></script>
+    <title>Dashboard</title>
 </head>
 
 <body>
     <header>
+        <div class="mobileHamburguer">
+            <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 25H25V20.8333H0V25ZM0 14.5833H25V10.4167H0V14.5833ZM0 0V4.16667H25V0H0Z" fill="white" />
+            </svg>
+        </div>
         <div class="brand">
             <div class="brand__logo">
                 <svg class="brand__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
@@ -50,6 +56,18 @@
             <a href="#" class="signIn__register">Registrar-se</a>
         </div>
     </header>
+    <main>
+        <div class="menuMobile">
+            <div class="brand__transaction brand__transaction--menuMobile">
+                <p class="brand__userName">Olá Caio Bruno!</p>
+                <button class="brand__btnTransaction">Nova Transação</button>
+            </div>
+            <div class="singIn signIn--menuMobile">
+                <a href="#" class="signIn__login">Login</a>
+                <a href="#" class="signIn__register">Registrar-se</a>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>

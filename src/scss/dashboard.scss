@@ -16,6 +16,10 @@ header {
     justify-content: center;
     gap: convertPXfromRem(14px) * 1rem;
 
+    .mobileHamburguer {
+        display: none;
+    }
+
     .brand {
         display: flex;
         align-items: center;
@@ -37,57 +41,125 @@ header {
                 font-weight: 600;
             }
         }
+    }
+}
 
-        &__transaction {
+.brand__transaction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: convertPXfromRem(26px) * 1rem;
+
+    .brand__userName {
+        font-weight: 600;
+    }
+
+    .brand__btnTransaction {
+        width: convertPXfromRem(195px) * 1rem;
+        height: convertPXfromRem(48px) * 1rem;
+        background-color: #633ECB;
+        font-size: convertPXfromRem(16px) * 1rem;
+        color: #FFFFFF;
+        font-weight: 600;
+        border: 0;
+        border-radius: convertPXfromRem(5px) * 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #462a92;
+            font-size: convertPXfromRem(17px) * 1rem;
+        }
+    }
+}
+
+.signIn {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: convertPXfromRem(196px) * 1rem;
+
+    &__login {
+        color: #FFFFFF;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: #1DA876;
+            font-size: convertPXfromRem(18px) * 1rem;
+        }
+    }
+
+    &__register {
+        color: #FFFFFF;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: #1DA876;
+            font-size: convertPXfromRem(18px) * 1rem;
+        }
+    }
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    .menuMobile {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        width: convertPXfromRem(258px) * 1rem;
+        height: 100vh;
+        background-color: #110338;
+        padding: convertPXfromRem(13px) * 1rem convertPXfromRem(25px) * 1rem;
+        gap: convertPXfromRem(26px) * 1rem;
+
+
+        .brand__transaction--menuMobile {
             display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: convertPXfromRem(26px) * 1rem;
+            flex-direction: column;
+            align-items: flex-start;
 
             .brand__userName {
-                font-weight: 600;
-            }
-
-            .brand__btnTransaction {
-                width: convertPXfromRem(195px) * 1rem;
-                height: convertPXfromRem(48px) * 1rem;
-                background-color: #633ECB;
-                font-size: convertPXfromRem(16px) * 1rem;
                 color: #FFFFFF;
-                font-weight: 600;
-                border: 0;
-                border-radius: convertPXfromRem(5px) * 1rem;
             }
         }
-    }
 
-    .signIn {
-        display: flex;
+        .signIn--menuMobile {
+            gap: convertPXfromRem(15px) * 1rem;
+            display: flex;
+            flex-direction: column;
+
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    header {
+        flex-direction: row;
+        align-items: center;
         justify-content: space-between;
-        align-self: flex-end;
-        width: convertPXfromRem(196px) * 1rem;
+        height: convertPXfromRem(82px) * 1rem;
+        padding: convertPXfromRem(21px) * 1rem convertPXfromRem(19px) * 1rem;
 
-        &__login {
-            color: #FFFFFF;
-            text-decoration: none;
+        .mobileHamburguer {
+            display: flex;
+            align-self: center;
+            cursor: pointer;
+        }
 
-            &:hover {
-                text-decoration: underline;
-                text-decoration-color: #1DA876;
-                font-size: convertPXfromRem(18px) * 1rem;
+        .brand {
+            justify-content: flex-end;
+
+            &__transaction {
+                display: none;
             }
         }
 
-        &__register {
-            color: #FFFFFF;
-            text-decoration: none;
-
-            &:hover {
-                text-decoration: underline;
-                text-decoration-color: #1DA876;
-                font-size: convertPXfromRem(18px) * 1rem;
-            }
+        .signIn {
+            display: none;
         }
     }
-
 }
