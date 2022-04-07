@@ -1,0 +1,25 @@
+@function convertPXfromRem($px) {
+    $result: 1;
+    $result: $px / 16px;
+    @return $result;
+}
+
+html,
+body {
+  background-color: #E5E5E5;
+  width: 100%;
+  height:100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+         
+}

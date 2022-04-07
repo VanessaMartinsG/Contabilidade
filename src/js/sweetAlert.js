@@ -9,5 +9,3 @@ export function errorAlert(msg) {
     });
 }
 
-errorAlert("CPF não cadastrado!");
-
