@@ -9,7 +9,8 @@ main{
 .table {
 
     width: convertPXfromRem(1120px) * 1rem;
-    height: convertPXfromRem(336px) * 1rem;
+    max-width: 90%;
+    height: convertPXfromRem(352px) * 1rem;
 
     &,
     .table__content {
@@ -30,11 +31,13 @@ main{
     }
 
     &::-webkit-scrollbar-thumb {
+        &:horizontal,&:vertical{
         border-radius: 5px;
         border: 1px solid transparent;
         background-clip: content-box;
         height: 10px;
         background-color: #633ECB;
+        }
     }
 
     .row {
@@ -42,7 +45,7 @@ main{
         height: convertPXfromRem(64px) * 1rem;
         display: grid;
         grid-auto-flow: column;
-        grid-template-columns: convertPXfromRem(360px) * 1rem convertPXfromRem(200px) * 1rem convertPXfromRem(175px) * 1rem convertPXfromRem(153px) * 1rem convertPXfromRem(104px) * 1rem convertPXfromRem(64px) * 1rem;
+        grid-template-columns: 35% 18% 17% 13% 12% 5%;
         justify-content: space-around;
         align-items: center;
     
@@ -110,3 +113,52 @@ main{
         }
     }
 }
+
+@media (max-width: 1023px){
+    .table {
+        height: convertPXfromRem(312px) * 1rem;
+        overflow-x: scroll;
+        max-width: 100%;
+        
+        .row {
+            width: 1120px;
+            @media (max-width: 490px) {
+                height: convertPXfromRem(56px) * 1rem;
+
+                &:not(.row__header) {
+                    background: #FFFFFF;
+                    border-radius: 5px;
+            
+                    p {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        &.reg__title {
+                            color: initial;
+                            width: 340px;
+                        }
+                        &.reg__price {
+                            width: 180px;
+                        }
+                        &.reg__cat {
+                            width: 155px;
+                        }
+                        &.reg__date {
+                            width: 123px;
+                        }
+                    }
+                    .reg__edit {
+                        width: 28px;
+                        height: 28px;
+                    }
+                    .reg__del {
+                        width: 27px;
+                        height: 27px;
+                    }
+        
+                }
+            }
+        }
+    }
+}
+
