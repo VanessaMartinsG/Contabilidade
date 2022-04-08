@@ -136,6 +136,159 @@ main {
     }
 }
 
+.modal {
+    background-color: rgba(6, 7, 7, 0.9);
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: convertPXfromRem(64px) * 1rem convertPXfromRem(48px) * 1rem;
+        background-color: #F0F2F5;
+        width: 576px;
+        height: 588px;
+
+        .modal__close {
+            position: absolute;
+            display: flex;
+            align-self: flex-end;
+            top: convertPXfromRem(21px) * 1rem;
+            right: convertPXfromRem(21px) * 1rem;
+            cursor: pointer;
+        }
+
+        .modal__title {
+            color: #363F5F;
+            font-size: convertPXfromRem(24px) * 1rem;
+            font-weight: 600;
+            margin-bottom: convertPXfromRem(32px) * 1rem;
+        }
+
+        .modal__form {
+            width: 100%;
+            margin-bottom: convertPXfromRem(24px) * 1rem;
+
+            input[type="text"] {
+                width: 100%;
+                height: convertPXfromRem(64px) * 1rem;
+                background-color: #E7E9EE;
+                border: convertPXfromRem(1px) * 1rem solid #D7D7D7;
+                border-radius: convertPXfromRem(5px) * 1rem;
+                padding: convertPXfromRem(20px) * 1rem convertPXfromRem(24px) * 1rem;
+                font-size: convertPXfromRem(16px) * 1rem;
+                margin-bottom: convertPXfromRem(16px) * 1rem;
+            }
+
+            &__typeTransactions {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: convertPXfromRem(16px) * 1rem;
+
+                #modal__form__typeTransactions__entrance {
+                    display: none;
+                }
+
+                #modal__form__typeTransactions__exit {
+                    display: none;
+                }
+
+                input[type="radio"]+label {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: convertPXfromRem(18px) * 1rem;
+                    font-size: convertPXfromRem(16px) * 1rem;
+                    border: convertPXfromRem(1.5px) * 1rem solid #969CB3;
+                    border-radius: convertPXfromRem(5px) * 1rem;
+                    width: convertPXfromRem(236px) * 1rem;
+                    height: convertPXfromRem(64px) * 1rem;
+                    background-color: #F0F2F5;
+                    color: #363F5F;
+                    cursor: pointer;
+                }
+
+                input[id="modal__form__typeTransactions__entrance"]:checked+label {
+                    background-color: #c6e3dc;
+                    border: 0;
+                }
+
+                input[id="modal__form__typeTransactions__exit"]:checked+label {
+                    background-color: #edc2c4;
+                    border: 0;
+                }
+            }
+
+            &__btnCadastrar {
+                width: 100%;
+                height: convertPXfromRem(64px) * 1rem;
+                background-color: #1DA876;
+                color: #FFFFFF;
+                font-size: convertPXfromRem(16px) * 1rem;
+                font-weight: 600;
+                border: 0;
+                border-radius: convertPXfromRem(5px) * 1rem;
+                margin-top: convertPXfromRem(8px) * 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #32d197;
+                }
+            }
+        }
+    }
+
+}
+
+@media (max-width: 425px) {
+    .modal__content {
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        padding: convertPXfromRem(64px) * 1rem convertPXfromRem(31px) * 1rem;
+
+        .modal__title {
+            margin-bottom: convertPXfromRem(50px) * 1rem;
+        }
+
+        .modal__form {
+            input[type="text"] {
+                height: convertPXfromRem(49px) * 1rem;
+                margin-bottom: convertPXfromRem(27px) * 1rem;
+            }
+
+            &__typeTransactions {
+                margin-bottom: convertPXfromRem(27px) * 1rem;
+                gap: convertPXfromRem(6px) * 1rem;
+
+                input[type="radio"]+label {
+                    width: convertPXfromRem(154px) * 1rem;
+                    height: convertPXfromRem(95px) * 1rem;
+                }
+            }
+
+            &__btnCadastrar {
+                height: convertPXfromRem(57px) * 1rem;
+            }
+        }
+    }
+}
+
+// @media (min-width: 768px) and (max-width: 1023px) {
+//     .modal__close {
+//         top: convertPXfromRem(40px) * 1rem;
+//         right: convertPXfromRem(40px) * 1rem;
+//     }
+// }
+
 @media (max-width: 1023px) {
     header {
         flex-direction: row;
