@@ -1,0 +1,113 @@
+@function convertPXfromRem($px) {
+    $result: 1;
+    $result: $px / 16px;
+    @return $result;
+}
+
+.card{
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border-radius:5px;
+    font-family:"Poppins",sans-serif;
+   
+  
+    &__enter{
+       padding-bottom:convertPXfromRem(14px) * 1rem ;
+       border-radius:5px;
+       background-color: #FFFFFF;
+       width:convertPXfromRem(352px) * 1rem;
+       height:convertPXfromRem(136px) * 1rem;
+       font-weight: 400 ;
+       color: #363F5F;
+
+       &__containerEnter{   
+           display:flex;
+           flex-direction:row;
+           justify-content: space-between;
+           margin-top:convertPXfromRem(24.67px) * 1rem;
+
+           &__titleEnter{
+            font-size:convertPXfromRem(16px) * 1rem;
+            padding-left:convertPXfromRem(32px) * 1rem ;   
+        }
+
+           &__logoTitle{
+               margin-right:convertPXfromRem(30px) * 1rem; 
+           }
+       } 
+       
+       &__value{
+           margin-left:convertPXfromRem(32px) * 1rem;
+           margin-top:convertPXfromRem(14.1px) * 1rem;
+           font-size:convertPXfromRem(36px) * 1rem;
+       }
+    }
+
+    &__exit{
+        padding-bottom:convertPXfromRem(14px) * 1rem;
+        border-radius:5px;
+        background-color: #FFFFFF;
+        width:convertPXfromRem(352px) * 1rem;
+        height:convertPXfromRem(136px) * 1rem;
+        font-weight:400;
+        color: #363F5F;
+ 
+        &__containerExit{   
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            margin-top:convertPXfromRem(24.67px) * 1rem;
+
+            &__titleExit{
+             font-size:convertPXfromRem(16px) * 1rem;
+             padding-left:convertPXfromRem(32px) * 1rem;   
+         }
+
+            &__logoTitle{
+                margin-right:convertPXfromRem(30px) * 1rem; 
+            }
+        } 
+        
+        &__value{
+            margin-left:convertPXfromRem(32px) * 1rem;
+            margin-top:convertPXfromRem(14.1px) * 1rem;
+            font-size:convertPXfromRem(36px) * 1rem;
+        }
+     }
+
+     &__total{
+        padding-bottom:convertPXfromRem(14px) * 1rem;
+        border-radius:5px;
+        background-color: #1DA876;
+        width:convertPXfromRem(352px) * 1rem;
+        height:convertPXfromRem(136px) * 1rem;
+        font-weight: 400;
+        color: #FFFFFF;
+ 
+        &__containerTotal{
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            margin-top:convertPXfromRem(25.19px) * 1rem;
+            
+            &__titleTotal{
+             font-size:16px;
+             padding-left:convertPXfromRem(32px) * 1rem;
+             font-weight: 500   
+         }
+            &__logoTitle{
+                margin-right:convertPXfromRem(30px) * 1rem;
+                font-weight: 500   
+            }
+        } 
+        &__value{
+            margin-left:convertPXfromRem(32px) * 1rem;
+            margin-top:convertPXfromRem(14.1px) * 1rem;
+            font-size:convertPXfromRem(36px) * 1rem;
+        }
+     }
+}
+
+
