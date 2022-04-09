@@ -1,7 +1,8 @@
 (() => {
-    const modal = document.querySelector(".modal");
+
 
     function openAndCloseModal() {
+        const modal = document.querySelector(".modal");
         const btnTransaction = document.querySelectorAll(".brand__btnTransaction");
         const btnCloser = document.querySelector(".modal__close");
 
@@ -19,10 +20,9 @@
             }
         });
 
-        // btnCloser.addEventListener("click", () => {
-        //     const modal = document.querySelector(".modal");
-        //     modal.style.display = "none";
-        // })
+        btnCloser.addEventListener("click", () => {
+            modal.classList.add("hidden");
+        })
     }
 
     openAndCloseModal();
