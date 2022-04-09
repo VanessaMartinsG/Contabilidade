@@ -1,3 +1,2 @@
-
 import "./sweetAlert.js";
-import "./login.js";
+import "./apiHandler.js";
