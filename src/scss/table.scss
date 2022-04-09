@@ -1,0 +1,167 @@
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table {
+
+    width: convertPXfromRem(1120px) * 1rem;
+    height: convertPXfromRem(352px) * 1rem;
+
+    &,
+    .table__content {
+        display: flex;
+        flex-direction: column;
+        gap: convertPXfromRem(8px) * 1rem;
+    }
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: convertPXfromRem(18px) * 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: #DFE1E2;
+        border-radius: 5px;
+        margin: convertPXfromRem(64px) * 1rem 0 0 0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        &:horizontal,&:vertical{
+        border-radius: 5px;
+        border: 1px solid transparent;
+        background-clip: content-box;
+        height: 10px;
+        background-color: #633ECB;
+        }
+    }
+
+    .row {
+        width: 100%;
+        height: convertPXfromRem(64px) * 1rem;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 35% 18% 17% 13% 12% 5%;
+        justify-content: space-around;
+        align-items: center;
+    
+        padding: convertPXfromRem(20px) * 1rem convertPXfromRem(32px) * 1rem;
+        font-weight: 400;
+        font-size: convertPXfromRem(16px) * 1rem;
+        color: #969CB3;
+        
+    
+        &:not(.row__header) {
+            background: #FFFFFF;
+            border-radius: 5px;
+    
+            p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                &.reg__title {
+                    color: initial;
+                    width: convertPXfromRem(340px) * 1rem;
+                }
+                &.reg__price {
+                    width: convertPXfromRem(180px) * 1rem;
+                }
+                &.reg__cat {
+                    width: convertPXfromRem(155px) * 1rem;
+                }
+                &.reg__date {
+                    width: convertPXfromRem(123px) * 1rem;
+                }
+            }
+            .reg__edit {
+                width: convertPXfromRem(28px) * 1rem;
+                height: convertPXfromRem(28px) * 1rem;
+                fill: #969CB2;
+                cursor: pointer;
+                
+                &:hover{
+                    transition: all 0.3s ease;
+                    fill: #1DA876;
+                }
+            }
+            .reg__del {
+                width: convertPXfromRem(27px) * 1rem;
+                height: convertPXfromRem(27px) * 1rem;
+                fill: #969CB2;
+                cursor: pointer;
+                
+                &:hover{
+                    transition: all 0.3s ease;
+                    fill: #E62E4D;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width: 1219px){
+    .table {
+        direction: rtl;
+        height: convertPXfromRem(312px) * 1rem;
+        overflow-x: scroll;
+        max-width: 100%;
+        
+        .row {
+            direction: ltr;
+            width: 1120px;
+            @media (max-width: 490px) {
+                height: convertPXfromRem(56px) * 1rem;
+
+                &:not(.row__header) {
+                    background: #FFFFFF;
+                    border-radius: 5px;
+            
+                    p {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        &.reg__title {
+                            color: initial;
+                            width: 340px;
+                        }
+                        &.reg__price {
+                            width: 180px;
+                        }
+                        &.reg__cat {
+                            width: 155px;
+                        }
+                        &.reg__date {
+                            width: 123px;
+                        }
+                    }
+                    .reg__edit {
+                        width: 28px;
+                        height: 28px;
+                    }
+                    .reg__del {
+                        width: 27px;
+                        height: 27px;
+                    }
+        
+                }
+            }
+        }
+    }
+}
+
+p{
+    &.deposit{
+        color: #1DA876;
+    }
+    &.withdraw {
+        color: #E62E4D;
+        &:before {
+            content: "- ";
+        }
+    }
+}
+
