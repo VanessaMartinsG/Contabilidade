@@ -294,13 +294,6 @@ main {
     }
 }
 
-// @media (min-width: 768px) and (max-width: 1023px) {
-//     .modal__close {
-//         top: convertPXfromRem(40px) * 1rem;
-//         right: convertPXfromRem(40px) * 1rem;
-//     }
-// }
-
 @media (max-width: 1023px) {
     header {
         flex-direction: row;

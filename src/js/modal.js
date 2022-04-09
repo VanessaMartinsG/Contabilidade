@@ -1,6 +1,4 @@
 (() => {
-
-
     function openAndCloseModal() {
         const modal = document.querySelector(".modal");
         const btnTransaction = document.querySelectorAll(".brand__btnTransaction");

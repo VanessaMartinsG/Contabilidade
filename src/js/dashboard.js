@@ -1,5 +1,4 @@
 (() => {
-
     function menuMobile() {
         const menuHamburguer = document.querySelector(".mobileHamburguer");
         const menuMobile = document.querySelector(".menuMobile");
