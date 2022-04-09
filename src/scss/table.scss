@@ -69,16 +69,6 @@ main{
                 }
                 &.reg__price {
                     width: convertPXfromRem(180px) * 1rem;
-
-                    &--green{
-                        color: #1DA876;
-                    }
-                    &--red {
-                        color: #E62E4D;
-                        &:before {
-                            content: "- ";
-                        }
-                    }
                 }
                 &.reg__cat {
                     width: convertPXfromRem(155px) * 1rem;
@@ -158,6 +148,18 @@ main{
         
                 }
             }
+        }
+    }
+}
+
+p{
+    &.deposit{
+        color: #1DA876;
+    }
+    &.withdraw {
+        color: #E62E4D;
+        &:before {
+            content: "- ";
         }
     }
 }
