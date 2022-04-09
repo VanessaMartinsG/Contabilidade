@@ -1,0 +1,76 @@
+@function convertPXfromRem($px) {
+    $result: 1;
+    $result: $px / 16px;
+    @return $result;
+}
+
+.cards{
+    width: convertPXfromRem(1120px) * 1rem;
+    margin-top: convertPXfromRem(58px) * -1rem;
+    display:flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius:5px;
+    padding-bottom: convertPXfromRem(64px) * 1rem;
+
+    .card{
+       width:convertPXfromRem(352px) * 1rem;
+       height:convertPXfromRem(136px) * 1rem;
+       border-radius:5px;
+       background-color: #FFFFFF;
+       padding: convertPXfromRem(25px) * 1rem convertPXfromRem(34px) * 1rem convertPXfromRem(18px) * 1rem convertPXfromRem(32px) * 1rem;
+       color: #363F5F;
+       
+       &--green{
+           color: #FFFFFF;
+           background-color: #1DA876;
+        }
+
+        &__container{
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            margin-bottom: convertPXfromRem(14px) * 1rem;
+            height: convertPXfromRem(38px) * 1rem;
+        }
+        
+        &__title {
+            font-weight: 400 ;
+            font-style: normal;
+            font-size:convertPXfromRem(16px) * 1rem;
+        }
+
+       &__value{
+            font-size:convertPXfromRem(36px) * 1rem;
+        }
+    }
+
+    @media (max-width: 1219px) {
+        max-width: 100%;
+        .card {
+            width: 32%;
+            &__value {
+                font-size:convertPXfromRem(24px) * 1rem;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            margin-top: convertPXfromRem(14px) * 1rem;
+            padding-bottom: convertPXfromRem(16px) * 1rem;
+            @media (max-width: 490px) {
+                flex-direction: column-reverse;
+                gap: convertPXfromRem(19px) * 1rem;
+                padding: 0 convertPXfromRem(11px) * 1rem 0 convertPXfromRem(11px);
+                .card {
+                    width: 100%;
+                    max-width: convertPXfromRem(352px) * 1rem;
+                }
+            }
+        }
+      
+    }
+}
+
+
+

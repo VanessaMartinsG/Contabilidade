@@ -1,0 +1,328 @@
+@function convertPXfromRem($px) {
+    $result: 1;
+    $result: $px / 16px;
+    @return $result;
+}
+
+header {
+    color: #FFFFFF;
+    background-color: #110338;
+    height: convertPXfromRem(212px) * 1rem;
+    width: 100%;
+    padding: 0 convertPXfromRem(160px) * 1rem;
+    padding-top: convertPXfromRem(32px) * 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: convertPXfromRem(14px) * 1rem;
+
+    .mobileHamburguer {
+        display: none;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__logo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: convertPXfromRem(14px) * 1rem;
+
+            .brand__icon {
+                width: convertPXfromRem(40px) * 1rem;
+                height: convertPXfromRem(40px) * 1rem;
+            }
+
+            .brand__title {
+                font-size: convertPXfromRem(16px) * 1rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.brand__transaction {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: convertPXfromRem(26px) * 1rem;
+
+    .brand__userName {
+        font-weight: 600;
+    }
+
+    .brand__btnTransaction {
+        width: convertPXfromRem(195px) * 1rem;
+        height: convertPXfromRem(48px) * 1rem;
+        background-color: #633ECB;
+        font-size: convertPXfromRem(16px) * 1rem;
+        color: #FFFFFF;
+        font-weight: 600;
+        border: 0;
+        border-radius: convertPXfromRem(5px) * 1rem;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #462a92;
+            font-size: convertPXfromRem(17px) * 1rem;
+        }
+    }
+}
+
+.signIn {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    width: convertPXfromRem(196px) * 1rem;
+
+    &__login {
+        color: #FFFFFF;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: #1DA876;
+            font-size: convertPXfromRem(18px) * 1rem;
+        }
+    }
+
+    &__register {
+        color: #FFFFFF;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: #1DA876;
+            font-size: convertPXfromRem(18px) * 1rem;
+        }
+    }
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    .dashboard {
+        width: convertPXfromRem(1120px) * 1rem;
+        max-width: 90%;
+    }
+
+    .menuMobile {
+        width: 100%;
+        height: 100vh;
+        display: none;
+        background-color: rgba(153, 142, 142, 0.53);
+        position: absolute;
+        top: 0px;
+
+        .menuMobile__aside {
+            display: flex;
+            flex-direction: column;
+            width: convertPXfromRem(258px) * 1rem;
+            height: 100vh;
+            background-color: #110338;
+            padding: convertPXfromRem(13px) * 1rem convertPXfromRem(25px) * 1rem;
+            gap: convertPXfromRem(26px) * 1rem;
+
+
+            .brand__transaction--menuMobile {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                .brand__userName {
+                    color: #FFFFFF;
+                }
+            }
+
+            .signIn--menuMobile {
+                gap: convertPXfromRem(15px) * 1rem;
+                display: flex;
+                flex-direction: column;
+
+            }
+        }
+    }
+}
+
+.modal {
+    background-color: rgba(6, 7, 7, 0.9);
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: convertPXfromRem(64px) * 1rem 0;
+        background-color: #F0F2F5;
+        height: convertPXfromRem(588px) * 1rem;
+        position: absolute;
+        width: convertPXfromRem(576px) * 1rem;
+
+        .modal__close {
+            position: absolute;
+            display: flex;
+            align-self: flex-end;
+            top: convertPXfromRem(21px) * 1rem;
+            right: convertPXfromRem(21px) * 1rem;
+            cursor: pointer;
+        }
+
+        .modal__title {
+            color: #363F5F;
+            font-size: convertPXfromRem(24px) * 1rem;
+            font-weight: 600;
+            margin-bottom: convertPXfromRem(32px) * 1rem;
+        }
+
+        .modal__form {
+            width: convertPXfromRem(480px) * 1rem;
+           
+
+            input[type="text"] {
+                width: 100%;
+                height: convertPXfromRem(64px) * 1rem;
+                background-color: #E7E9EE;
+                border: convertPXfromRem(1px) * 1rem solid #D7D7D7;
+                border-radius: convertPXfromRem(5px) * 1rem;
+                padding: convertPXfromRem(20px) * 1rem convertPXfromRem(24px) * 1rem;
+                font-size: convertPXfromRem(16px) * 1rem;
+                margin-bottom: convertPXfromRem(16px) * 1rem;
+            }
+
+            &__typeTransactions {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: convertPXfromRem(16px) * 1rem;
+
+                #modal__form__typeTransactions__entrance {
+                    display: none;
+                }
+
+                #modal__form__typeTransactions__exit {
+                    display: none;
+                }
+
+                input[type="radio"]+label {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    gap: convertPXfromRem(18px) * 1rem;
+                    font-size: convertPXfromRem(16px) * 1rem;
+                    border: convertPXfromRem(1.5px) * 1rem solid #969CB3;
+                    border-radius: convertPXfromRem(5px) * 1rem;
+                    width: convertPXfromRem(236px) * 1rem;
+                    height: convertPXfromRem(64px) * 1rem;
+                    background-color: #F0F2F5;
+                    color: #363F5F;
+                    cursor: pointer;
+                }
+
+                input[id="modal__form__typeTransactions__entrance"]:checked+label {
+                    background-color: #c6e3dc;
+                    border: 0;
+                }
+
+                input[id="modal__form__typeTransactions__exit"]:checked+label {
+                    background-color: #edc2c4;
+                    border: 0;
+                }
+            }
+
+            &__btnCadastrar {
+                width: 100%;
+                height: convertPXfromRem(64px) * 1rem;
+                background-color: #1DA876;
+                color: #FFFFFF;
+                font-size: convertPXfromRem(16px) * 1rem;
+                font-weight: 600;
+                border: 0;
+                border-radius: convertPXfromRem(5px) * 1rem;
+                margin-top: convertPXfromRem(8px) * 1rem;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #32d197;
+                }
+            }
+        }
+    }
+
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 425px) {
+    .modal__content {
+        width: 100%;
+        height: 100vh;
+        align-items: center;
+        padding: convertPXfromRem(64px) * 1rem convertPXfromRem(31px) * 1rem;
+
+        .modal__title {
+            margin-bottom: convertPXfromRem(50px) * 1rem;
+        }
+
+        .modal__form {
+            input[type="text"] {
+                height: convertPXfromRem(49px) * 1rem;
+                margin-bottom: convertPXfromRem(27px) * 1rem;
+            }
+
+            &__typeTransactions {
+                margin-bottom: convertPXfromRem(27px) * 1rem;
+                gap: convertPXfromRem(6px) * 1rem;
+
+                input[type="radio"]+label {
+                    width: 50%;
+                    height: convertPXfromRem(95px) * 1rem;
+                }
+            }
+
+            &__btnCadastrar {
+                height: convertPXfromRem(57px) * 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    header {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: convertPXfromRem(82px) * 1rem;
+        padding: convertPXfromRem(21px) * 1rem convertPXfromRem(19px) * 1rem;
+
+        .mobileHamburguer {
+            display: flex;
+            align-self: center;
+            cursor: pointer;
+        }
+
+        .brand {
+            justify-content: flex-end;
+
+            &__transaction {
+                display: none;
+            }
+        }
+
+        .signIn {
+            display: none;
+        }
+    }
+}
