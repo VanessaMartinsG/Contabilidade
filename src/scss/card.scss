@@ -11,6 +11,7 @@
     justify-content: space-evenly;
     border-radius:5px;
     font-family:"Poppins",sans-serif;
+   
   
     &__enter{
        padding-bottom:convertPXfromRem(14px) * 1rem ;
@@ -18,7 +19,7 @@
        background-color: #FFFFFF;
        width:convertPXfromRem(352px) * 1rem;
        height:convertPXfromRem(136px) * 1rem;
-       font-weight: 400;
+       font-weight: 400 ;
        color: #363F5F;
 
        &__containerEnter{   
@@ -108,3 +109,5 @@
         }
      }
 }
+
+
