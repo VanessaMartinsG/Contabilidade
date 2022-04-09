@@ -57,6 +57,189 @@
         </div>
     </header>
     <main>
+        <div class="dashboard">
+            <section class="cards">
+                <div class="card">
+                    <div class="card__container">
+                        <h3 class="card__title">Entradas</h3>
+                        <svg class="card__logo" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 1.99999C6.47715 1.99999 2 6.47714 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47714 17.5228 1.99999 12 1.99999Z"
+                                stroke="#12A454" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M16 12L12 8L8 12" stroke="#12A454" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M12 16L12 7.99998" stroke="#12A454" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="card__value totalEntries">
+                        R$ 17.400,00
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card__container">
+                        <h3 class="card__title">Saída</h3>
+                        <svg class="card__logo" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 22C17.5228 22 22 17.5229 22 12C22 6.4772 17.5228 2.00005 12 2.00005C6.47715 2.00005 2 6.4772 2 12C2 17.5229 6.47715 22 12 22Z"
+                                stroke="#E62E4D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M8 12L12 16L16 12" stroke="#E62E4D" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M12 8.00005L12 16" stroke="#E62E4D" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="card__value totalExit">
+                        R$ 1.259,00
+                    </div>
+                </div>
+
+                <div class="card card--green">
+                    <div class="card__container">
+                        <h3 class="card__title">Total</h3>
+                        <svg class="card__logo" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 1.33331V30.6666" stroke="white" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path
+                                d="M22.6667 6.66669H12.6667C11.429 6.66669 10.242 7.15835 9.36684 8.03352C8.49167 8.90869 8 10.0957 8 11.3334C8 12.571 8.49167 13.758 9.36684 14.6332C10.242 15.5084 11.429 16 12.6667 16H19.3333C20.571 16 21.758 16.4917 22.6332 17.3669C23.5083 18.242 24 19.429 24 20.6667C24 21.9044 23.5083 23.0914 22.6332 23.9665C21.758 24.8417 20.571 25.3334 19.3333 25.3334H8"
+                                stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="card__value totalMoney">
+                        R$ 16.141,49
+                    </div>
+
+                </div>
+            </section>
+            <div class="table">
+                <div class="row row__header">
+                    <p>Título</p>
+                    <p>Preço</p>
+                    <p>Categoria</p>
+                    <p>Data</p>
+                    <p>Editar</p>
+                    <p>Excluir</p>
+                </div>
+                <div class="table__content">
+                    <div class="row">
+                        <p class="reg__title">Energia Elétrica</p>
+                        <p class="reg__price deposity  withdraw">59,00</p>
+                        <p class="reg__cat">Casa</p>
+                        <p class="reg__date">10/04/2021</p>
+                        <svg class="reg__edit" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 21.3787V27.0037H5.625L22.215 10.4137L16.59 4.78875L0 21.3787ZM26.565 6.06375C27.15 5.47875 27.15 4.53375 26.565 3.94875L23.055 0.43875C22.47 -0.14625 21.525 -0.14625 20.94 0.43875L18.195 3.18375L23.82 8.80875L26.565 6.06375Z" />
+                        </svg>
+                        <svg class="reg__del" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.92857 24C1.92857 25.65 3.66429 27 5.78571 27H21.2143C23.3357 27 25.0714 25.65 25.0714 24V6H1.92857V24ZM27 1.5H20.25L18.3214 0H8.67857L6.75 1.5H0V4.5H27V1.5Z" />
+                        </svg>
+                    </div>
+                    <div class="row">
+                        <p class="reg__title">Energia Elétrica</p>
+                        <p class="reg__price deposity  withdraw">59,00</p>
+                        <p class="reg__cat">Casa</p>
+                        <p class="reg__date">10/04/2021</p>
+                        <svg class="reg__edit" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 21.3787V27.0037H5.625L22.215 10.4137L16.59 4.78875L0 21.3787ZM26.565 6.06375C27.15 5.47875 27.15 4.53375 26.565 3.94875L23.055 0.43875C22.47 -0.14625 21.525 -0.14625 20.94 0.43875L18.195 3.18375L23.82 8.80875L26.565 6.06375Z" />
+                        </svg>
+                        <svg class="reg__del" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.92857 24C1.92857 25.65 3.66429 27 5.78571 27H21.2143C23.3357 27 25.0714 25.65 25.0714 24V6H1.92857V24ZM27 1.5H20.25L18.3214 0H8.67857L6.75 1.5H0V4.5H27V1.5Z" />
+                        </svg>
+                    </div>
+                    <div class="row">
+                        <p class="reg__title">Energia Elétrica</p>
+                        <p class="reg__price deposity  withdraw">59,00</p>
+                        <p class="reg__cat">Casa</p>
+                        <p class="reg__date">10/04/2021</p>
+                        <svg class="reg__edit" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 21.3787V27.0037H5.625L22.215 10.4137L16.59 4.78875L0 21.3787ZM26.565 6.06375C27.15 5.47875 27.15 4.53375 26.565 3.94875L23.055 0.43875C22.47 -0.14625 21.525 -0.14625 20.94 0.43875L18.195 3.18375L23.82 8.80875L26.565 6.06375Z" />
+                        </svg>
+                        <svg class="reg__del" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.92857 24C1.92857 25.65 3.66429 27 5.78571 27H21.2143C23.3357 27 25.0714 25.65 25.0714 24V6H1.92857V24ZM27 1.5H20.25L18.3214 0H8.67857L6.75 1.5H0V4.5H27V1.5Z" />
+                        </svg>
+                    </div>
+                    <div class="row">
+                        <p class="reg__title">Energia Elétrica</p>
+                        <p class="reg__price deposity  withdraw">59,00</p>
+                        <p class="reg__cat">Casa</p>
+                        <p class="reg__date">10/04/2021</p>
+                        <svg class="reg__edit" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 21.3787V27.0037H5.625L22.215 10.4137L16.59 4.78875L0 21.3787ZM26.565 6.06375C27.15 5.47875 27.15 4.53375 26.565 3.94875L23.055 0.43875C22.47 -0.14625 21.525 -0.14625 20.94 0.43875L18.195 3.18375L23.82 8.80875L26.565 6.06375Z" />
+                        </svg>
+                        <svg class="reg__del" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.92857 24C1.92857 25.65 3.66429 27 5.78571 27H21.2143C23.3357 27 25.0714 25.65 25.0714 24V6H1.92857V24ZM27 1.5H20.25L18.3214 0H8.67857L6.75 1.5H0V4.5H27V1.5Z" />
+                        </svg>
+                    </div>
+                    <div class="row">
+                        <p class="reg__title">Energia Elétrica</p>
+                        <p class="reg__price deposity  withdraw">59,00</p>
+                        <p class="reg__cat">Casa</p>
+                        <p class="reg__date">10/04/2021</p>
+                        <svg class="reg__edit" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 21.3787V27.0037H5.625L22.215 10.4137L16.59 4.78875L0 21.3787ZM26.565 6.06375C27.15 5.47875 27.15 4.53375 26.565 3.94875L23.055 0.43875C22.47 -0.14625 21.525 -0.14625 20.94 0.43875L18.195 3.18375L23.82 8.80875L26.565 6.06375Z" />
+                        </svg>
+                        <svg class="reg__del" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.92857 24C1.92857 25.65 3.66429 27 5.78571 27H21.2143C23.3357 27 25.0714 25.65 25.0714 24V6H1.92857V24ZM27 1.5H20.25L18.3214 0H8.67857L6.75 1.5H0V4.5H27V1.5Z" />
+                        </svg>
+                    </div>
+                    <div class="row">
+                        <p class="reg__title">Energia Elétrica</p>
+                        <p class="reg__price deposity  withdraw">59,00</p>
+                        <p class="reg__cat">Casa</p>
+                        <p class="reg__date">10/04/2021</p>
+                        <svg class="reg__edit" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 21.3787V27.0037H5.625L22.215 10.4137L16.59 4.78875L0 21.3787ZM26.565 6.06375C27.15 5.47875 27.15 4.53375 26.565 3.94875L23.055 0.43875C22.47 -0.14625 21.525 -0.14625 20.94 0.43875L18.195 3.18375L23.82 8.80875L26.565 6.06375Z" />
+                        </svg>
+                        <svg class="reg__del" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.92857 24C1.92857 25.65 3.66429 27 5.78571 27H21.2143C23.3357 27 25.0714 25.65 25.0714 24V6H1.92857V24ZM27 1.5H20.25L18.3214 0H8.67857L6.75 1.5H0V4.5H27V1.5Z" />
+                        </svg>
+                    </div>
+                    <div class="row">
+                        <p class="reg__title">Energia Elétrica</p>
+                        <p class="reg__price deposity  withdraw">59,00</p>
+                        <p class="reg__cat">Casa</p>
+                        <p class="reg__date">10/04/2021</p>
+                        <svg class="reg__edit" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 21.3787V27.0037H5.625L22.215 10.4137L16.59 4.78875L0 21.3787ZM26.565 6.06375C27.15 5.47875 27.15 4.53375 26.565 3.94875L23.055 0.43875C22.47 -0.14625 21.525 -0.14625 20.94 0.43875L18.195 3.18375L23.82 8.80875L26.565 6.06375Z" />
+                        </svg>
+                        <svg class="reg__del" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.92857 24C1.92857 25.65 3.66429 27 5.78571 27H21.2143C23.3357 27 25.0714 25.65 25.0714 24V6H1.92857V24ZM27 1.5H20.25L18.3214 0H8.67857L6.75 1.5H0V4.5H27V1.5Z" />
+                        </svg>
+                    </div>
+                    <div class="row">
+                        <p class="reg__title">Energia Elétrica</p>
+                        <p class="reg__price deposity  withdraw">59,00</p>
+                        <p class="reg__cat">Casa</p>
+                        <p class="reg__date">10/04/2021</p>
+                        <svg class="reg__edit" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 21.3787V27.0037H5.625L22.215 10.4137L16.59 4.78875L0 21.3787ZM26.565 6.06375C27.15 5.47875 27.15 4.53375 26.565 3.94875L23.055 0.43875C22.47 -0.14625 21.525 -0.14625 20.94 0.43875L18.195 3.18375L23.82 8.80875L26.565 6.06375Z" />
+                        </svg>
+                        <svg class="reg__del" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M1.92857 24C1.92857 25.65 3.66429 27 5.78571 27H21.2143C23.3357 27 25.0714 25.65 25.0714 24V6H1.92857V24ZM27 1.5H20.25L18.3214 0H8.67857L6.75 1.5H0V4.5H27V1.5Z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="menuMobile">
             <div class="menuMobile__aside">
                 <div class="brand__transaction brand__transaction--menuMobile">

@@ -9,7 +9,6 @@ main{
 .table {
 
     width: convertPXfromRem(1120px) * 1rem;
-    max-width: 90%;
     height: convertPXfromRem(352px) * 1rem;
 
     &,
@@ -104,13 +103,15 @@ main{
     }
 }
 
-@media (max-width: 1023px){
+@media (max-width: 1219px){
     .table {
+        direction: rtl;
         height: convertPXfromRem(312px) * 1rem;
         overflow-x: scroll;
         max-width: 100%;
         
         .row {
+            direction: ltr;
             width: 1120px;
             @media (max-width: 490px) {
                 height: convertPXfromRem(56px) * 1rem;

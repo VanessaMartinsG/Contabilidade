@@ -4,110 +4,73 @@
     @return $result;
 }
 
-.card{
+.cards{
+    width: convertPXfromRem(1120px) * 1rem;
+    margin-top: convertPXfromRem(58px) * -1rem;
     display:flex;
     align-items: center;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     border-radius:5px;
-    font-family:"Poppins",sans-serif;
-   
-  
-    &__enter{
-       padding-bottom:convertPXfromRem(14px) * 1rem ;
-       border-radius:5px;
-       background-color: #FFFFFF;
+    padding-bottom: convertPXfromRem(64px) * 1rem;
+
+    .card{
        width:convertPXfromRem(352px) * 1rem;
        height:convertPXfromRem(136px) * 1rem;
-       font-weight: 400 ;
+       border-radius:5px;
+       background-color: #FFFFFF;
+       padding: convertPXfromRem(25px) * 1rem convertPXfromRem(34px) * 1rem convertPXfromRem(18px) * 1rem convertPXfromRem(32px) * 1rem;
        color: #363F5F;
-
-       &__containerEnter{   
-           display:flex;
-           flex-direction:row;
-           justify-content: space-between;
-           margin-top:convertPXfromRem(24.67px) * 1rem;
-
-           &__titleEnter{
-            font-size:convertPXfromRem(16px) * 1rem;
-            padding-left:convertPXfromRem(32px) * 1rem ;   
+       
+       &--green{
+           color: #FFFFFF;
+           background-color: #1DA876;
         }
 
-           &__logoTitle{
-               margin-right:convertPXfromRem(30px) * 1rem; 
-           }
-       } 
-       
+        &__container{
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            margin-bottom: convertPXfromRem(14px) * 1rem;
+            height: convertPXfromRem(38px) * 1rem;
+        }
+        
+        &__title {
+            font-weight: 400 ;
+            font-style: normal;
+            font-size:convertPXfromRem(16px) * 1rem;
+        }
+
        &__value{
-           margin-left:convertPXfromRem(32px) * 1rem;
-           margin-top:convertPXfromRem(14.1px) * 1rem;
-           font-size:convertPXfromRem(36px) * 1rem;
-       }
+            font-size:convertPXfromRem(36px) * 1rem;
+        }
     }
 
-    &__exit{
-        padding-bottom:convertPXfromRem(14px) * 1rem;
-        border-radius:5px;
-        background-color: #FFFFFF;
-        width:convertPXfromRem(352px) * 1rem;
-        height:convertPXfromRem(136px) * 1rem;
-        font-weight:400;
-        color: #363F5F;
- 
-        &__containerExit{   
-            display:flex;
-            flex-direction:row;
-            justify-content: space-between;
-            margin-top:convertPXfromRem(24.67px) * 1rem;
-
-            &__titleExit{
-             font-size:convertPXfromRem(16px) * 1rem;
-             padding-left:convertPXfromRem(32px) * 1rem;   
-         }
-
-            &__logoTitle{
-                margin-right:convertPXfromRem(30px) * 1rem; 
+    @media (max-width: 1219px) {
+        max-width: 100%;
+        .card {
+            width: 32%;
+            &__value {
+                font-size:convertPXfromRem(24px) * 1rem;
             }
-        } 
-        
-        &__value{
-            margin-left:convertPXfromRem(32px) * 1rem;
-            margin-top:convertPXfromRem(14.1px) * 1rem;
-            font-size:convertPXfromRem(36px) * 1rem;
         }
-     }
 
-     &__total{
-        padding-bottom:convertPXfromRem(14px) * 1rem;
-        border-radius:5px;
-        background-color: #1DA876;
-        width:convertPXfromRem(352px) * 1rem;
-        height:convertPXfromRem(136px) * 1rem;
-        font-weight: 400;
-        color: #FFFFFF;
- 
-        &__containerTotal{
-            display:flex;
-            flex-direction:row;
-            justify-content: space-between;
-            margin-top:convertPXfromRem(25.19px) * 1rem;
-            
-            &__titleTotal{
-             font-size:16px;
-             padding-left:convertPXfromRem(32px) * 1rem;
-             font-weight: 500   
-         }
-            &__logoTitle{
-                margin-right:convertPXfromRem(30px) * 1rem;
-                font-weight: 500   
+        @media (max-width: 1023px) {
+            margin-top: convertPXfromRem(14px) * 1rem;
+            padding-bottom: convertPXfromRem(16px) * 1rem;
+            @media (max-width: 490px) {
+                flex-direction: column-reverse;
+                gap: convertPXfromRem(19px) * 1rem;
+                padding: 0 convertPXfromRem(11px) * 1rem 0 convertPXfromRem(11px);
+                .card {
+                    width: 100%;
+                    max-width: convertPXfromRem(352px) * 1rem;
+                }
             }
-        } 
-        &__value{
-            margin-left:convertPXfromRem(32px) * 1rem;
-            margin-top:convertPXfromRem(14.1px) * 1rem;
-            font-size:convertPXfromRem(36px) * 1rem;
         }
-     }
+      
+    }
 }
+
 
 

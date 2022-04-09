@@ -13,7 +13,6 @@ header {
     padding-top: convertPXfromRem(32px) * 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: convertPXfromRem(14px) * 1rem;
 
     .mobileHamburguer {
@@ -106,16 +105,22 @@ main {
     width: 100%;
     height: 100vh;
 
+    .dashboard {
+        width: convertPXfromRem(1120px) * 1rem;
+        max-width: 90%;
+    }
+
     .menuMobile {
         width: 100%;
         height: 100vh;
         display: none;
         background-color: rgba(153, 142, 142, 0.53);
+        position: absolute;
+        top: 0px;
 
         .menuMobile__aside {
             display: flex;
             flex-direction: column;
-            position: absolute;
             width: convertPXfromRem(258px) * 1rem;
             height: 100vh;
             background-color: #110338;
@@ -153,16 +158,16 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    
     &__content {
         display: flex;
         flex-direction: column;
-        padding: convertPXfromRem(64px) * 1rem convertPXfromRem(48px) * 1rem;
+        align-items: center;
+        padding: convertPXfromRem(64px) * 1rem 0;
         background-color: #F0F2F5;
-        overflow-y: scroll;
-        height: 100%;
+        height: convertPXfromRem(588px) * 1rem;
         position: absolute;
-        width: 576px;
+        width: convertPXfromRem(576px) * 1rem;
 
         .modal__close {
             position: absolute;
@@ -181,8 +186,8 @@ main {
         }
 
         .modal__form {
-            width: 100%;
-            margin-bottom: convertPXfromRem(24px) * 1rem;
+            width: convertPXfromRem(480px) * 1rem;
+           
 
             input[type="text"] {
                 width: 100%;
