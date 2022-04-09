@@ -4,10 +4,16 @@
     const cpf = document.getElementById("cpf");
     const saldo = document.getElementById("saldo");
 
-    saldo.addEventListener("keyup", () => {
-        let money = saldo.value.replaceAll(".", "").replace(",", ".").replace('R$', '').trim();
-        const formatter = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" });
-        saldo.value = formatter.format(money);
+    saldo.addEventListener("blur", (e) => {
+        let formatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        }).format(parseFloat(e.target.value.replace(",", ".")));
+        saldo.value = formatter;
+    })
+
+    saldo.addEventListener("focus", () => {
+        saldo.value = "";
     })
 
     form_login.addEventListener("submit", (e) => {
