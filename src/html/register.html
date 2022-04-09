@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href = "../../dist/css/app.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,
+200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <script  src ="../../dist/js/app.min.js" defer ></script>
+    <title>Cadastro</title>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <svg class="brand__icon" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M34.1422 5.85781C30.3647 2.08031 25.3422 0 20 0C14.6578 0 9.63531 2.08031 5.85781 5.85781C2.08031 9.63531 0 14.6578 0 20C0 25.3422 2.08039 30.3646 5.85781 34.1422C9.63523 37.9198 14.6578 40 20 40C25.3422 40 30.3647 37.9197 34.1422 34.1422C37.9197 30.3647 40 25.3422 40 20C40 14.6578 37.9196 9.63539 34.1422 5.85781Z"
+                    fill="#1DA876" />
+                <g clip-path="url(#clip0_27_1482)">
+                    <path d="M20.5714 8V33.1429" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path
+                        d="M26.2857 12.5714H17.7142C16.6534 12.5714 15.636 12.9928 14.8858 13.743C14.1357 14.4931 13.7142 15.5105 13.7142 16.5714C13.7142 17.6323 14.1357 18.6497 14.8858 19.3998C15.636 20.15 16.6534 20.5714 17.7142 20.5714H23.4285C24.4894 20.5714 25.5068 20.9928 26.2569 21.743C27.0071 22.4931 27.4285 23.5105 27.4285 24.5714C27.4285 25.6323 27.0071 26.6497 26.2569 27.3998C25.5068 28.15 24.4894 28.5714 23.4285 28.5714H13.7142"
+                        stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </g>
+                <defs>
+                    <clipPath id="clip0_27_1482">
+                        <rect width="27.4286" height="27.4286" fill="white" transform="translate(6.85712 6.85712)" />
+                    </clipPath>
+                </defs>
+            </svg>
+            <h1 class="brand__title">Money Control</h1>
+        </div>
+        <div class="signIn">
+            <a href="#" class="signIn__login">Login</a>
+            <a href="#" class="signIn__register">Registrar-se</a>
+        </div>
+    </header>
+    <main class="register">
+         <div class = "register__box">
+            <h2 class="register__box__title">Cadastrar Usuário</h2>
+            <form name="register__box__form" class="register__box__form">
+                <div class="register__box__form__inputs">
+                <input type="text" class = "register__box__form__input nome" name="name"  placeholder="Nome" id="name"/>
+                <input type="email" class = "register__box__form__input email" name="email" placeholder="Email" id = "email"/>
+                <input type="text" class = "register__box__form__input cpf" name="cpf" placeholder="Cpf" id = "cpf" maxlength="14"/>
+                <input type="text" class = "register__box__form__input saldo" name="saldo" placeholder="Saldo" id = "saldo"/>
+            </div>
+            <div class="register__box__form__bt">
+                <button type = "submit" class="register__box__form__bt__btCadastrar">Cadastrar</button>
+            </div>
+            </form>
+         </div>
+    </main>
+</body>
+</html>

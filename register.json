@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Lázaro Queiroz da Silva",
+      "email": "lazaroq11@gmail.com",
+      "cpf": "06274521593",
+      "Saldo": "1770"
+    },
+    {
+      "nome": "Teste",
+      "email": "",
+      "cpf": "",
+      "saldo": "",
+      "id": 2
+    },
+    {
+      "nome": "Lázaro",
+      "email": "lazaroq11@gmail.com",
+      "cpf": "06274521522",
+      "saldo": "1230",
+      "id": 3
+    },
+    {
+      "nome": "Marcos Paulo",
+      "email": "marquinhos@gmail.com",
+      "cpf": "0873423779",
+      "saldo": "17",
+      "id": 4
+    },
+    {
+      "nome": "Lázaro",
+      "email": "lazaroq11@gmail",
+      "cpf": "08288288",
+      "saldo": "8123123212",
+      "id": 5
+    },
+    {
+      "nome": "Lázaro",
+      "email": "lazaroq11@gmail.com",
+      "cpf": "1203921039123013",
+      "saldo": "1750",
+      "id": 6
+    }
+  ]
+}
