@@ -37,18 +37,46 @@ export async function setUserMoneyCards(user) {
         });
     }
 
-    function openAndCloseModal() {
-        const modal = document.querySelector(".modal");
-        const btnTransaction = document.querySelectorAll(".brand__btnTransaction");
-        const btnCloser = document.querySelector(".modal__close");
+    function modalEdit() {
 
-        btnTransaction.forEach(btn => {
-            btn.addEventListener("click", () => {
+        const modal = document.querySelector(".modal");
+        const edit = document.querySelectorAll(".reg__edit");
+
+        edit.forEach(item => {
+            item.addEventListener("click", (e) => {
+                const title = document.querySelector(".modal__title");
+                const btnEdit = document.querySelector(".modal__form__btnCadastrar");
                 if (modal.classList.contains("hidden")) {
                     modal.classList.remove("hidden");
                 }
+                title.textContent = "Editar transação";
+                btnEdit.textContent = "Editar";
             });
         });
+    }
+
+    function modalRegister() {
+        const modal = document.querySelector(".modal");
+        const btnTransaction = document.querySelectorAll(".brand__btnTransaction");
+
+        btnTransaction.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const title = document.querySelector(".modal__title");
+                const btnEdit = document.querySelector(".modal__form__btnCadastrar");
+                if (modal.classList.contains("hidden")) {
+                    modal.classList.remove("hidden");
+                }
+                title.textContent = "Cadastrar transação";
+                btnEdit.textContent = "Cadastrar";
+            });
+        });
+
+        closeModals();
+    }
+
+    function closeModals() {
+        const modal = document.querySelector(".modal");
+        const btnCloser = document.querySelector(".modal__close");
 
         modal.addEventListener("click", (e) => {
             if (e.target.classList.contains("modal") || e.target.parentNode.classList.contains("modal__close")) {
@@ -58,7 +86,8 @@ export async function setUserMoneyCards(user) {
 
         btnCloser.addEventListener("click", () => {
             modal.classList.add("hidden");
-        })
+        });
+
     }
 
     function setAccountData() {
@@ -74,7 +103,9 @@ export async function setUserMoneyCards(user) {
 
     function init() {
         menuMobile();
-        openAndCloseModal();
+        modalRegister();
+        modalEdit();
+        closeModals();
         setAccountData();
     }
 
