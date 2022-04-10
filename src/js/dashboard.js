@@ -1,5 +1,23 @@
+import { getAccount } from './apiHandler.js';
+
+
+export async function setUserMoneyCards(user) {
+    const userAccount = await getAccount(user);
+
+    if (userAccount != null) {
+        const cardEntries = document.querySelector(".totalEntries");
+        const cardExit = document.querySelector(".totalExit");
+        const cardTotal = document.querySelector(".totalMoney");
+
+        cardEntries.textContent = Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(userAccount.total_enter_money);
+        cardExit.textContent = Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(userAccount.total_exit_money);
+        cardTotal.textContent = Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL' }).format(userAccount.total_money);
+    }
+}
 
 (() => {
+    const mainWindow = "http://127.0.0.1:5501/src/html/dashboard.html";
+
     function menuMobile() {
         const menuHamburguer = document.querySelector(".mobileHamburguer");
         const menuMobile = document.querySelector(".menuMobile");
@@ -43,11 +61,28 @@
         })
     }
 
+    function setAccountData() {
+        const nameUserMobile = document.querySelector(".brand__userName--mobile");
+        const nameUser = document.querySelector(".brand__userName");
+        let userData = JSON.parse(window.localStorage.getItem('user'));
+
+        nameUser.textContent = userData.name;
+        nameUserMobile.textContent = "Olá" + " " + userData.name + " " + "!";
+        setUserMoneyCards(userData);
+
+    }
+
     function init() {
         menuMobile();
         openAndCloseModal();
+        setAccountData();
     }
 
-    if (document.body.classList.contains("dashboardScreen"))
-        init();
+    if (document.body.classList.contains("dashboardScreen")) {
+        if (window.localStorage.getItem('user')) {
+            init();
+        } else {
+            window.location.href = loginWindow;
+        }
+    }
 })();
