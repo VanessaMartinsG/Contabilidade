@@ -1,5 +1,5 @@
 import { getAccount, getStatement } from './apiHandler.js';
-import { setUserMoneyCards } from './dashboard.js';
+import { setUserMoneyCards, modalEdit } from './dashboard.js';
 
 (() => {
 
@@ -51,6 +51,7 @@ import { setUserMoneyCards } from './dashboard.js';
         const userStatements = await getStatement(userData);
         if (userStatements != null) {
             showStatements(userStatements);
+            modalEdit();
         }
     }
 

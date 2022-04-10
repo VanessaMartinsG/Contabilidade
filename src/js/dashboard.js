@@ -15,6 +15,24 @@ export async function setUserMoneyCards(user) {
     }
 }
 
+export function modalEdit() {
+
+    const modal = document.querySelector(".modal");
+    const edit = document.querySelectorAll(".reg__edit");
+
+    edit.forEach(item => {
+        item.addEventListener("click", (e) => {
+            const title = document.querySelector(".modal__title");
+            const btnEdit = document.querySelector(".modal__form__btnCadastrar");
+            if (modal.classList.contains("hidden")) {
+                modal.classList.remove("hidden");
+            }
+            title.textContent = "Editar transação";
+            btnEdit.textContent = "Editar";
+        });
+    });
+}
+
 (() => {
     const mainWindow = "http://127.0.0.1:5501/src/html/dashboard.html";
 
@@ -34,24 +52,6 @@ export async function setUserMoneyCards(user) {
             if (e.target.classList.contains("menuMobile")) {
                 menuMobile.style.display = "none";
             }
-        });
-    }
-
-    function modalEdit() {
-
-        const modal = document.querySelector(".modal");
-        const edit = document.querySelectorAll(".reg__edit");
-
-        edit.forEach(item => {
-            item.addEventListener("click", (e) => {
-                const title = document.querySelector(".modal__title");
-                const btnEdit = document.querySelector(".modal__form__btnCadastrar");
-                if (modal.classList.contains("hidden")) {
-                    modal.classList.remove("hidden");
-                }
-                title.textContent = "Editar transação";
-                btnEdit.textContent = "Editar";
-            });
         });
     }
 
