@@ -10,7 +10,7 @@ export async function postAccount(user) {
     });
 
     if (response.status == 400) {
-        errorAlert("CPF já Cadastrado !");
+        errorAlert("Usuário já cadastrado !");
     }
     return response.status;
 
@@ -24,7 +24,7 @@ export async function getAccount(user) {
 
     const data = await response.json();
     if (response.status == 400) {
-        errorAlert(response.error);
+        errorAlert("Usuário não Existe");
         return null;
     }
     return data;
@@ -39,7 +39,7 @@ export async function getStatement(user) {
 
     const data = await response.json();
     if (response.status == 400) {
-        errorAlert(response.error);
+        errorAlert("Usuário não existe !");
         return null;
     }
     return data;
@@ -52,12 +52,11 @@ export async function postTask(user, task) {
         headers: { "Content-Type": "application/json", "cpf": user.cpf },
         body: JSON.stringify(task)
     });
-    const data = await response.json();
     if (response.status == 400) {
-        errorAlert(data.error);
+        errorAlert("Operação resulta em saldo negativo !");
         return null;
     }
-    return data;
+    return response.status;
 }
 
 export async function getTask(user, task) {
@@ -67,7 +66,7 @@ export async function getTask(user, task) {
     });
     const data = await response.json();
     if (response.status == 400) {
-        errorAlert(data.error);
+        errorAlert("Registro não existe !");
         return null;
     }
     return data;
@@ -76,14 +75,16 @@ export async function getTask(user, task) {
 export async function putTask(user, task) {
     const response = await fetch(`${ContabilidadeAPIUrl}/task/${task.id}`, {
         method: "PUT",
-        headers: { "cpf": user.cpf },
+        headers: { "Content-Type": "application/json", "cpf": user.cpf },
+        body: JSON.stringify(task)
     });
-    const data = await response.json();
+
     if (response.status == 400) {
-        errorAlert(data.error);
+        errorAlert("Registro não existe !");
         return null;
     }
-    return data;
+
+    return response.status;
 }
 
 export async function deleteTask(user, task) {
@@ -91,10 +92,10 @@ export async function deleteTask(user, task) {
         method: "DELETE",
         headers: { "cpf": user.cpf },
     });
-    const data = await response.json();
+
     if (response.status == 400) {
-        errorAlert(data.error);
+        errorAlert("Usuário não existe !");
         return null;
     }
-    return data;
+    return response.status;
 }

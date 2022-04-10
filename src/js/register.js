@@ -4,6 +4,7 @@ import { errorAlert } from "./sweetAlert.js"
 (() => {
 
     const form_login = document.forms.register__box__form;
+    const loginWindow = "http://127.0.0.1:5501/src/html/login.html";
 
     function cpfFormatter() {
         const { cpf } = form_login;
@@ -53,6 +54,8 @@ import { errorAlert } from "./sweetAlert.js"
             let validaCampos = validaCampo(name, email, cpf, saldo);
             if (validaCampos === false) {
                 const response = await postAccount(user);
+                if (response == 201)
+                    window.location.href = loginWindow;
                 form_login.reset();
             }
         });

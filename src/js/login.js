@@ -52,7 +52,6 @@ import { getAccount } from './apiHandler.js';
                 if (response == null)
                     form_login.reset();
                 else {
-                    console.log(response);
                     const userAccount = { name: response.name, cpf: response.cpf }
                     localStorage.setItem('user', JSON.stringify(userAccount));
                     window.location.href = mainWindow;
