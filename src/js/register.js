@@ -4,9 +4,9 @@ import { errorAlert } from "./sweetAlert.js"
 (() => {
 
     const form_login = document.forms.register__box__form;
-    const { name, email, cpf, saldo } = form_login;
 
     function cpfFormatter() {
+        const { cpf } = form_login;
         cpf.addEventListener('keypress', (e) => {
             let cpfLength = cpf.value.length;
 
@@ -25,6 +25,7 @@ import { errorAlert } from "./sweetAlert.js"
     }
 
     function saldoFormatter() {
+        const { saldo } = form_login;
         saldo.addEventListener('keypress', (e) => {
             let saldoLength = saldo.value.length;
 
@@ -38,6 +39,7 @@ import { errorAlert } from "./sweetAlert.js"
 
 
     function registerSubmit() {
+        const { name, email, cpf, saldo } = form_login;
         form_login.addEventListener("submit", async (e) => {
             e.preventDefault();
 
@@ -105,7 +107,7 @@ import { errorAlert } from "./sweetAlert.js"
         registerSubmit();
     }
 
-    if (body.classList.contains("register"))
+    if (document.body.classList.contains("registerScreen"))
         init();
 
 

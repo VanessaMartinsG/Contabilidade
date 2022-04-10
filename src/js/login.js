@@ -6,22 +6,21 @@ import { errorAlert } from './sweetAlert.js'
     let cpf = document.querySelector('.login__form__cpf')
     let btn = document.querySelector('.login__form__btlogin');
 
+    function checkCpf(params) {
+
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
 
 
+            if (cpf.value == "") {
+                cpf.style.border = "1px solid red";
 
-
-    btn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-
-        if (cpf.value == "") {
-            cpf.style.border = "1px solid red";
-
-        } else {
-            cpf.style.border = "1px solid #D7D7D7";
-            getUserList();
-        }
-    })
+            } else {
+                cpf.style.border = "1px solid #D7D7D7";
+                getUserList();
+            }
+        });
+    }
 
     async function getUserList() {
         let listUser = [];
@@ -59,4 +58,12 @@ import { errorAlert } from './sweetAlert.js'
                 errorAlert("Cpf Inválido");
             }
     }
+
+    function init() {
+        checkCpf();
+        getUserList();
+    }
+
+    if (document.body.classList.contains("loginScreen"))
+        init();
 })();

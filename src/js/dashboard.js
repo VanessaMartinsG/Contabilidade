@@ -48,6 +48,6 @@
         openAndCloseModal();
     }
 
-    if (body.classList.contains("body"))
+    if (document.body.classList.contains("dashboardScreen"))
         init();
 })();
