@@ -7,7 +7,15 @@
     padding-top: convertPXfromRem(32px) * 1rem;
     display: flex;
     flex-direction: column;
-    gap: convertPXfromRem(14px) * 1rem;
+    align-items: center;
+
+
+    .hDashWidth {
+        display: flex;
+        flex-direction: column;
+        gap: convertPXfromRem(14px) * 1rem;
+        width: convertPXfromRem(1120px) * 1rem;
+    }
 
     .mobileHamburguer {
         display: none;
@@ -312,12 +320,19 @@ main {
         align-items: center;
         justify-content: space-between;
         height: convertPXfromRem(82px) * 1rem;
-        padding: convertPXfromRem(21px) * 1rem convertPXfromRem(19px) * 1rem;
+        padding: convertPXfromRem(21px) * 1rem convertPXfromRem(60px) * 1rem;
 
         .mobileHamburguer {
             display: flex;
             align-self: center;
             cursor: pointer;
+        }
+
+        .hDashWidth {
+            max-width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
         }
 
         .brand {
@@ -332,4 +347,17 @@ main {
             display: none;
         }
     }
+}
+
+@media (min-width: 1024px) {
+
+    .headerDashboard {
+        padding: 0 convertPXfromRem(60px) * 1rem;
+        padding-top: convertPXfromRem(32px) * 1rem;
+
+        .hDashWidth {
+            max-width: 100%;
+        }
+    }
+
 }
