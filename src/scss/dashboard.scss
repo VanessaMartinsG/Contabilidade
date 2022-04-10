@@ -67,27 +67,28 @@
 
 .signIn {
 
-    .menuMobile &, .headerDashboard & {
+    .menuMobile &,
+    .headerDashboard & {
         display: flex;
         justify-content: space-between;
         align-self: flex-end;
         width: convertPXfromRem(196px) * 1rem;
-    
+
         &__login {
             color: #FFFFFF;
             text-decoration: none;
-    
+
             &:hover {
                 text-decoration: underline;
                 text-decoration-color: #1DA876;
                 font-size: convertPXfromRem(18px) * 1rem;
             }
         }
-    
+
         &__register {
             color: #FFFFFF;
             text-decoration: none;
-    
+
             &:hover {
                 text-decoration: underline;
                 text-decoration-color: #1DA876;
@@ -95,7 +96,7 @@
             }
         }
     }
-  
+
 }
 
 main {
@@ -156,12 +157,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
     &__content {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: convertPXfromRem(64px) * 1rem 0;
+        padding: convertPXfromRem(64px) * 1rem convertPXfromRem(48px) * 1rem;
         background-color: #F0F2F5;
         height: convertPXfromRem(588px) * 1rem;
         position: absolute;
@@ -185,7 +185,7 @@ main {
 
         .modal__form {
             width: convertPXfromRem(480px) * 1rem;
-           
+
 
             input[type="text"] {
                 width: 100%;
@@ -267,6 +267,7 @@ main {
     .modal__content {
         width: 100%;
         height: 100vh;
+        overflow-y: scroll;
         align-items: center;
         padding: convertPXfromRem(64px) * 1rem convertPXfromRem(31px) * 1rem;
 
@@ -275,6 +276,8 @@ main {
         }
 
         .modal__form {
+            width: 100%;
+
             input[type="text"] {
                 height: convertPXfromRem(49px) * 1rem;
                 margin-bottom: convertPXfromRem(27px) * 1rem;
@@ -294,6 +297,12 @@ main {
                 height: convertPXfromRem(57px) * 1rem;
             }
         }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .modal__content {
+        height: 100%;
     }
 }
 
