@@ -6,55 +6,55 @@ import { errorAlert } from "./sweetAlert.js"
     const form_login = document.forms.register__box__form;
     const { name, email, cpf, saldo } = form_login;
 
-    cpf.addEventListener('keypress', (e) => {
-        let cpfLength = cpf.value.length;
+    function cpfFormatter() {
+        cpf.addEventListener('keypress', (e) => {
+            let cpfLength = cpf.value.length;
 
-        if (isNaN(cpf.value[cpfLength - 1])) {
-            cpf.value = cpf.value.substring(0, cpfLength - 1);
-            return false;
-        }
-
-        if (cpfLength === 3 || cpfLength === 7) {
-            cpf.value += "."
-        } else
-            if (cpfLength === 11) {
-                cpf.value += "-"
+            if (isNaN(cpf.value[cpfLength - 1])) {
+                cpf.value = cpf.value.substring(0, cpfLength - 1);
+                return false;
             }
-    });
 
-    saldo.addEventListener('keypress', (e) => {
-        let saldoLength = saldo.value.length;
+            if (cpfLength === 3 || cpfLength === 7) {
+                cpf.value += "."
+            } else
+                if (cpfLength === 11) {
+                    cpf.value += "-"
+                }
+        });
+    }
 
-        if (isNaN(saldo.value[saldoLength - 1]) && saldo.value[saldoLength - 1] != "." && saldo.value[saldoLength - 1] != ",") {
-            saldo.value = saldo.value.substring(0, saldoLength - 1);
-            return false;
-        }
-    });
+    function saldoFormatter() {
+        saldo.addEventListener('keypress', (e) => {
+            let saldoLength = saldo.value.length;
 
-
-    form_login.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        const user = {
-            name: name.value,
-            email: email.value,
-            cpf: cpf.value.replaceAll("-", "").replaceAll(".", ""),
-            total_money: parseFloat(saldo.value.replaceAll(",", "."))
-        };
-
-        let validaCampos = validaCampo(name, email, cpf, saldo);
-        if (validaCampos === false) {
-            const response = await postAccount(user);
-            form_login.reset();
-        }
-    });
+            if (isNaN(saldo.value[saldoLength - 1]) && saldo.value[saldoLength - 1] != "." && saldo.value[saldoLength - 1] != ",") {
+                saldo.value = saldo.value.substring(0, saldoLength - 1);
+                return false;
+            }
+        });
+    }
 
 
 
+    function registerSubmit() {
+        form_login.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
+            const user = {
+                name: name.value,
+                email: email.value,
+                cpf: cpf.value.replaceAll("-", "").replaceAll(".", ""),
+                total_money: parseFloat(saldo.value.replaceAll(",", "."))
+            };
 
-
-
+            let validaCampos = validaCampo(name, email, cpf, saldo);
+            if (validaCampos === false) {
+                const response = await postAccount(user);
+                form_login.reset();
+            }
+        });
+    }
 
     function validaCampo(name, email, cpf, saldo) {
         const nomeInpt = document.getElementById("name");
@@ -98,6 +98,15 @@ import { errorAlert } from "./sweetAlert.js"
 
         return valida;
     }
+
+    function init() {
+        cpfFormatter();
+        saldoFormatter();
+        registerSubmit();
+    }
+
+    if (body.classList.contains("register"))
+        init();
 
 
 })();
