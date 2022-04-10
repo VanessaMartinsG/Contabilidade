@@ -14,139 +14,92 @@
         border-radius: 5px;
         width: convertPXfromRem(728px) * 1rem;
         height: convertPXfromRem(377px) * 1rem;
+    }
+    &__title {
+        font-family: "Poppins", sans-serif;
+        color: #363F5F;
+        font-size: convertPXfromRem(24px) * 1rem;
+    }
 
-        .login__title {
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        &__cpf {
+            background-color: #E7E9EE;
+            border: 1px solid #D7D7D7;
+            border-radius: 5px;
+            width: convertPXfromRem(288px) * 1rem;
+            height: convertPXfromRem(53px) * 1rem;
             font-family: "Poppins", sans-serif;
-            color: #363F5F;
-            font-size: convertPXfromRem(24px) * 1rem;
+            font-weight: 400;
+            font-size: 1rem;
+            text-align: left;
+            padding-left: convertPXfromRem(23px) * 1rem;
+            padding-top: convertPXfromRem(14px) * 1rem;
+            padding-bottom: convertPXfromRem(15px) * 1rem;
+
+            &:focus {
+                outline: 0;
+                box-shadow: 0 0 0 0;
+            }
+
+            &::-webkit-input-placeholder {
+                font-family: "Poppins", sans-serif;
+                font-size: convertPXfromRem(16px) * 1rem;
+            }
+
+            &:focus::-webkit-input-placeholder {
+                color: transparent;
+            }
+
         }
 
-        .login__form {
-            display: flex;
-            flex-direction: column;
+        &__btlogin {
+            height: convertPXfromRem(64px) * 1rem;
+            background-color: #1DA876;
+            border: 1px solid #D7D7D7;
+            border-radius: 5px;
+            color: #FFFFFF;
+            font-size: convertPXfromRem(16px) * 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: convertPXfromRem(53px) * 1rem;
 
+
+            &:hover {
+                background-color: #363F5F;
+                transition: all ease 0.3s;
+            }
+        }     
+}
+}
+
+@media (max-width: 768px) {
+
+    .login {
+        background-color: #F0F2F5;
+        height: 100%;
+        padding: convertPXfromRem(25px) * 1rem  convertPXfromRem(30px) * 1rem 0;
+
+        &__box {
+            height: 100%;
+            width: 100%;
+            background-color: #F0F2F5;
+            justify-content: unset;
+        }
+        &__form {
+            width: 100%;
             &__cpf {
-                background-color: #E7E9EE;
-                border: 1px solid #D7D7D7;
-                border-radius: 5px;
-                width: convertPXfromRem(288px) * 1rem;
-                height: convertPXfromRem(53px) * 1rem;
-                font-family: "Poppins", sans-serif;
-                font-weight: 400;
-                font-size: 1rem;
-                text-align: left;
-                padding-left: convertPXfromRem(23px) * 1rem;
-                padding-top: convertPXfromRem(14px) * 1rem;
-                padding-bottom: convertPXfromRem(15px) * 1rem;
-
-                &:focus {
-                    outline: 0;
-                    box-shadow: 0 0 0 0;
-                }
-
-                &::-webkit-input-placeholder {
-                    font-family: "Poppins", sans-serif;
-                    font-size: convertPXfromRem(16px) * 1rem;
-                }
-
-                &:focus::-webkit-input-placeholder {
-                    color: transparent;
-                }
-
+                margin-top: convertPXfromRem(50px) * 1rem;
+                width: 100%;
+                height: convertPXfromRem(49px) * 1rem;
             }
 
             &__btlogin {
-                height: convertPXfromRem(64px) * 1rem;
-                background-color: #1DA876;
-                border: 1px solid #D7D7D7;
-                border-radius: 5px;
-                color: #FFFFFF;
-                font-size: convertPXfromRem(16px) * 1rem;
-                font-weight: 600;
-                cursor: pointer;
-                margin-top: convertPXfromRem(53px) * 1rem;
-
-
-                &:hover {
-                    background-color: #363F5F;
-                    transition: all ease 0.3s;
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 490px) {
-
-    .login {
-        background-color: #F0F2F5;
-
-        .login__box {
-            height: 100%;
-            width: 100%;
-            background-color: #F0F2F5;
-            padding-top: convertPXfromRem(25px) * 1rem;
-            justify-content: unset;
-
-            .login__form__cpf {
-                margin-top: convertPXfromRem(51px) * 1rem;
-                width: convertPXfromRem(313px) * 1rem;
-                height: convertPXfromRem(49px) * 1rem;
-            }
-
-            .login__form__btlogin {
+                width: 100%;
                 height: convertPXfromRem(58px) * 1rem;
-                margin-top: convertPXfromRem(51px) * 1rem;
-            }
-        }
-    }
-}
-
-@media (min-width: 491px) and (max-width: 767px) {
-    .login {
-        background-color: #F0F2F5;
-
-        .login__box {
-            height: 100%;
-            width: 100%;
-            background-color: #F0F2F5;
-            padding-top: convertPXfromRem(25px) * 1rem;
-            justify-content: unset;
-
-            .login__form__cpf {
-                margin-top: convertPXfromRem(51px) * 1rem;
-                width: convertPXfromRem(313px) * 1rem;
-                height: convertPXfromRem(49px) * 1rem;
-            }
-
-            .login__form__btlogin {
-                height: convertPXfromRem(58px) * 1rem;
-                margin-top: convertPXfromRem(51px) * 1rem;
-            }
-        }
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .login {
-        background-color: #F0F2F5;
-
-        .login__box {
-            height: 100%;
-            width: 100%;
-            background-color: #F0F2F5;
-            padding-top: convertPXfromRem(45px) * 1rem;
-            justify-content: unset;
-
-            .login__form__cpf {
-                margin-top: convertPXfromRem(51px) * 1rem;
-                width: convertPXfromRem(313px) * 1rem;
-                height: convertPXfromRem(49px) * 1rem;
-            }
-
-            .login__form__btlogin {
-                height: convertPXfromRem(58px) * 1rem;
-                margin-top: convertPXfromRem(51px) * 1rem;
+                margin-top: convertPXfromRem(50px) * 1rem;
             }
         }
     }

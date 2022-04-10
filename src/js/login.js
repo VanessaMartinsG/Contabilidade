@@ -1,67 +1,69 @@
 import { errorAlert } from './sweetAlert.js'
+import { getAccount } from './apiHandler.js';
 (() => {
 
-    let baseURL = "https://money-control-backend.herokuapp.com";
+    const form_login = document.forms.login__form;
+    const mainWindow = "http://127.0.0.1:5501/src/html/dashboard.html";
 
-    let cpf = document.querySelector('.login__form__cpf')
-    let btn = document.querySelector('.login__form__btlogin');
+    function cpfFormatter() {
+        const { cpf } = form_login;
+        cpf.addEventListener('keypress', (e) => {
+            let cpfLength = cpf.value.length;
 
-    function checkCpf(params) {
-
-        btn.addEventListener("click", (e) => {
-            e.preventDefault();
-
-
-            if (cpf.value == "") {
-                cpf.style.border = "1px solid red";
-
-            } else {
-                cpf.style.border = "1px solid #D7D7D7";
-                getUserList();
+            if (isNaN(cpf.value[cpfLength - 1])) {
+                cpf.value = cpf.value.substring(0, cpfLength - 1);
+                return false;
             }
+
+            if (cpfLength === 3 || cpfLength === 7) {
+                cpf.value += "."
+            } else
+                if (cpfLength === 11) {
+                    cpf.value += "-"
+                }
         });
     }
 
-    async function getUserList() {
-        let listUser = [];
-        let userValid = {
-            name: '',
-            email: '',
-            cpf: '',
-            total_money: ''
+    function checkCpf() {
+        const { cpf } = form_login;
+
+        if (cpf.value.trim() == "") {
+            cpf.style.border = "1px solid red";
+            form_login.reset();
+            return false;
+
+        } else {
+            cpf.style.border = "1px solid #D7D7D7";
+            return true;
         }
 
+    }
 
+    function submitLogin() {
+        const { name, email, cpf, saldo } = form_login;
+        form_login.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            if (checkCpf()) {
+                const user = {
+                    cpf: cpf.value.replaceAll("-", "").replaceAll(".", "")
+                };
 
-        const response = await fetch(`${baseURL}/account`, {
-            headers: { "cpf": cpf.value }
-
+                const response = await getAccount(user);
+                if (response == null)
+                    form_login.reset();
+                else {
+                    console.log(response);
+                    const userAccount = { name: response.name, cpf: response.cpf }
+                    localStorage.setItem('user', JSON.stringify(userAccount));
+                    window.location.href = mainWindow;
+                }
+            }
         });
-        const userList = await response.json();
-        listUser = userList;
-
-        if (cpf.value == listUser.cpf) {
-            userValid = {
-                name: listUser.name,
-                email: listUser.email,
-                cpf: listUser.cpf,
-                total_money: listUser.total_money,
-            }
-        }
-
-        if (response.status == 200) {
-            window.location.href = "http://127.0.0.1:5500/src/html/Validate.html"
-            localStorage.setItem('userValid', JSON.stringify(userValid))
-        } else
-
-            if (response.status == 400) {
-                errorAlert("Cpf Inválido");
-            }
     }
 
     function init() {
-        checkCpf();
-        getUserList();
+        cpfFormatter();
+        submitLogin();
     }
 
     if (document.body.classList.contains("loginScreen"))

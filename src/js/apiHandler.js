@@ -8,7 +8,6 @@ export async function postAccount(user) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user)
     });
-    console.log(response);
 
     if (response.status == 400) {
         errorAlert("CPF já Cadastrado !");
@@ -24,10 +23,8 @@ export async function getAccount(user) {
     });
 
     const data = await response.json();
-    console.log(response);
-    console.log(data);
     if (response.status == 400) {
-        errorAlert(data.error);
+        errorAlert(response.error);
         return null;
     }
     return data;
@@ -42,7 +39,7 @@ export async function getStatement(user) {
 
     const data = await response.json();
     if (response.status == 400) {
-        errorAlert(data.error);
+        errorAlert(response.error);
         return null;
     }
     return data;
