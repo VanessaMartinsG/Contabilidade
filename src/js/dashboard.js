@@ -1,4 +1,6 @@
 import { getAccount } from './apiHandler.js';
+import { submitTaskForm } from './modal.js'
+import { updateStatements } from './statementTable.js'
 
 
 export async function setUserMoneyCards(user) {
@@ -15,6 +17,16 @@ export async function setUserMoneyCards(user) {
     }
 }
 
+export function resetTaskFormMode() {
+    const modal = document.querySelector(".modal");
+    modal.classList.add("hidden");
+    const task_form = document.forms.task__form;
+    if (task_form.classList.contains("form__editMode"))
+        task_form.classList.remove("form__editMode");
+    if (task_form.classList.contains("form__registerMode"))
+        task_form.classList.remove("form__registerMode");
+}
+
 export function modalEdit() {
 
     const modal = document.querySelector(".modal");
@@ -26,6 +38,8 @@ export function modalEdit() {
             const btnEdit = document.querySelector(".modal__form__btnCadastrar");
             if (modal.classList.contains("hidden")) {
                 modal.classList.remove("hidden");
+                const task_form = document.forms.task__form;
+                task_form.classList.add("form__editMode");
             }
             title.textContent = "Editar transação";
             btnEdit.textContent = "Editar";
@@ -65,6 +79,8 @@ export function modalEdit() {
                 const btnEdit = document.querySelector(".modal__form__btnCadastrar");
                 if (modal.classList.contains("hidden")) {
                     modal.classList.remove("hidden");
+                    const task_form = document.forms.task__form;
+                    task_form.classList.add("form__registerMode");
                 }
                 title.textContent = "Cadastrar transação";
                 btnEdit.textContent = "Cadastrar";
@@ -80,12 +96,12 @@ export function modalEdit() {
 
         modal.addEventListener("click", (e) => {
             if (e.target.classList.contains("modal") || e.target.parentNode.classList.contains("modal__close")) {
-                modal.classList.add("hidden");
+                resetTaskFormMode();
             }
         });
 
         btnCloser.addEventListener("click", () => {
-            modal.classList.add("hidden");
+            resetTaskFormMode();
         });
 
     }
@@ -107,6 +123,7 @@ export function modalEdit() {
         modalEdit();
         closeModals();
         setAccountData();
+        updateStatements();
     }
 
     if (document.body.classList.contains("dashboardScreen")) {
