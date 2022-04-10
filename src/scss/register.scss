@@ -1,15 +1,10 @@
-@function convertPXfromRem($px) {
-    $result: 1;
-    $result: $px / 16px;
-    @return $result;
-}
-
 .register {
     display: flex;
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     height: 100%;
-
+    padding-top: convertPXfromRem(100px) * 1rem;
+    
     &__box {
         display: flex;
         align-items: center;
@@ -98,19 +93,22 @@
     }
 }
 
-@media (max-width: 490px) {
+@media (max-width: 768px) {
     .register {
         background-color: #F0F2F5;
-
+        height: 100%;
+        padding: convertPXfromRem(25px) * 1rem  convertPXfromRem(30px) * 1rem 0;
+        
         &__box {
             height: 100%;
             width: 100%;
             background-color: #F0F2F5;
-            padding-top: convertPXfromRem(25px) * 1rem;
             justify-content: unset;
-
+            
             &__form {
+                width: 100%;
                 &__inputs {
+                    width: 100%;
                     display: grid;
                     grid-template:
                         "nome"
@@ -121,13 +119,14 @@
                 }
 
                 &__input {
-                    width: convertPXfromRem(313px) * 1rem;
+                    width: 100%;
                     height: convertPXfromRem(49px) * 1rem;
                 }
 
                 &__bt {
+                    width: 100%;
                     &__btCadastrar {
-                        width: convertPXfromRem(313px) * 1rem;
+                        width: 100%;
                         height: convertPXfromRem(58px) * 1rem;
                     }
                 }
@@ -136,7 +135,7 @@
     }
 }
 
-@media (min-width: 491px) and (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
     .register {
         background-color: #F0F2F5;
 

@@ -1,10 +1,4 @@
-@function convertPXfromRem($px) {
-    $result: 1;
-    $result: $px / 16px;
-    @return $result;
-}
-
-header {
+.headerDashboard {
     color: #FFFFFF;
     background-color: #110338;
     height: convertPXfromRem(212px) * 1rem;
@@ -72,32 +66,36 @@ header {
 }
 
 .signIn {
-    display: flex;
-    justify-content: space-between;
-    align-self: flex-end;
-    width: convertPXfromRem(196px) * 1rem;
 
-    &__login {
-        color: #FFFFFF;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-            text-decoration-color: #1DA876;
-            font-size: convertPXfromRem(18px) * 1rem;
+    .menuMobile &, .headerDashboard & {
+        display: flex;
+        justify-content: space-between;
+        align-self: flex-end;
+        width: convertPXfromRem(196px) * 1rem;
+    
+        &__login {
+            color: #FFFFFF;
+            text-decoration: none;
+    
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: #1DA876;
+                font-size: convertPXfromRem(18px) * 1rem;
+            }
+        }
+    
+        &__register {
+            color: #FFFFFF;
+            text-decoration: none;
+    
+            &:hover {
+                text-decoration: underline;
+                text-decoration-color: #1DA876;
+                font-size: convertPXfromRem(18px) * 1rem;
+            }
         }
     }
-
-    &__register {
-        color: #FFFFFF;
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-            text-decoration-color: #1DA876;
-            font-size: convertPXfromRem(18px) * 1rem;
-        }
-    }
+  
 }
 
 main {
@@ -300,7 +298,7 @@ main {
 }
 
 @media (max-width: 1023px) {
-    header {
+    .headerDashboard {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;

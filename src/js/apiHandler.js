@@ -2,18 +2,21 @@ import { errorAlert } from "./sweetAlert.js"
 
 const ContabilidadeAPIUrl = "https://money-control-backend.herokuapp.com";
 
-export  async function postAccount(user) {
+export async function postAccount(user) {
     const response = await fetch(`${ContabilidadeAPIUrl}/account`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user)
-    });      
+    });
     console.log(response);
+
     if (response.status == 400) {
-        errorAlert("CPF INVÁLIDO!");
+        errorAlert("CPF já Cadastrado !");
     }
-    
+    return response.status;
+
 }
+
 export async function getAccount(user) {
     const response = await fetch(`${ContabilidadeAPIUrl}/account`, {
         method: "GET",

@@ -1,10 +1,4 @@
-@function convertPXfromRem($px) {
-    $result: 1;
-    $result: $px / 16px;
-    @return $result;
-}
-
-header {
+.headerHome {
     color: #FFFFFF;
     background-color: #110338;
     height: convertPXfromRem(212px) * 1rem;
@@ -65,7 +59,7 @@ header {
 }
 
 @media (max-width: 490px) {
-    header {
+    .headerHome {
         height: convertPXfromRem(82px) * 1rem;
         justify-content: space-between;
 
@@ -91,7 +85,7 @@ header {
 }
 
 @media (min-width: 491px) and (max-width: 767px) {
-    header {
+    .headerHome {
         height: convertPXfromRem(82px) * 1rem;
         justify-content: space-between;
 
@@ -117,7 +111,7 @@ header {
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-    header {
+    .headerHome {
         height: convertPXfromRem(82px) * 1rem;
         justify-content: space-between;
 
