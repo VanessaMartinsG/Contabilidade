@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="../../dist/css/app.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,
-200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap"
+        rel="stylesheet">
     <script src="../../dist/js/app.min.js" defer></script>
-    <title>Cadastro</title>
+
+    <title>Login</title>
 </head>
 
 <body>
@@ -42,23 +44,13 @@
             <a href="#" class="signIn__register">Registrar-se</a>
         </div>
     </header>
-    <main class="register">
-        <div class="register__box">
-            <h2 class="register__box__title">Cadastrar Usuário</h2>
-            <form name="register__box__form" class="register__box__form">
-                <div class="register__box__form__inputs">
-                    <input type="text" class="register__box__form__input nome" name="name" placeholder="Nome"
-                        id="name" />
-                    <input type="email" class="register__box__form__input email" name="email" placeholder="Email"
-                        id="email" />
-                    <input type="text" class="register__box__form__input cpf" name="cpf" placeholder="Cpf" id="cpf"
-                        maxlength="14" />
-                    <input type="text" class="register__box__form__input saldo" name="saldo" placeholder="Saldo"
-                        id="saldo" />
-                </div>
-                <div class="register__box__form__bt">
-                    <button type="submit" class="register__box__form__bt__btCadastrar">Cadastrar</button>
-                </div>
+    <main class="login">
+        <div class="login__box">
+            <h2 class="login__title">Login Usuário</h2>
+            <form class="login__form" name="login__form">
+                <input type="text" class="login__form__cpf" name="login__form__cpf" id="login__form__cpf"
+                    placeholder="Cpf" maxlength="14" />
+                <button class="login__form__btlogin">Login</button>
             </form>
         </div>
     </main>
